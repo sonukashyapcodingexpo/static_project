@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System & Foundation Spec | Phase 1</title>
+  
+  <!-- Shared Design System CSS -->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/variables.css">
+  <link rel="stylesheet" href="./assets/css/global.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
+
+  <style>
+    /* Design System Spec Viewer specific styles */
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    .token-swatch {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--color-rule);
+      background: var(--color-surface);
+    }
+    .swatch-color {
+      height: 84px;
+      width: 100%;
+    }
+    .swatch-info {
+      padding: var(--space-sm);
+      font-size: var(--text-body-sm);
+    }
+    .swatch-name {
+      font-family: var(--font-heading);
+      font-weight: var(--fw-semibold);
+      color: var(--color-ink);
+    }
+    .swatch-hex {
+      font-family: var(--font-mono);
+      font-size: var(--text-eyebrow);
+      color: var(--color-ink-muted);
+    }
+    .spec-header {
+      background-color: var(--color-surface);
+      border-bottom: 1px solid var(--color-rule);
+      padding: var(--space-xl) 0;
+    }
+    .spec-badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      background: var(--color-accent-soft);
+      color: var(--color-accent);
+      font-family: var(--font-heading);
+      font-size: var(--text-eyebrow);
+      font-weight: var(--fw-bold);
+      border-radius: var(--radius-xs);
+      margin-bottom: var(--space-xs);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Spec Viewer Header -->
+  <header class="spec-header">
+    <div class="container">
+      <span class="spec-badge">PHASE 1 DELIVERABLE</span>
+      <h1 class="h2">Corporate Website — Design System & Foundational Tokens</h1>
+      <p class="lead">
+        Warm editorial corporate visual system: disciplined typography, restrained palette, accessible interactions, and modular UI patterns.
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- 01. Color Palette Tokens -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Visual Foundation</span>
+        <h2>01. Color Palette & Surface Tokens</h2>
+        <p>A restrained neutral foundation anchored by warm off-white canvas, crisp surfaces, and a deliberate terracotta accent.</p>
+        
+        <div class="token-grid">
+          <div class="token-swatch">
+            <div class="swatch-color" style="background-color: #F5F4F0;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Canvas</div>
+              <div class="swatch-hex">#F5F4F0</div>
+            </div>
+          </div>
+          <div class="token-swatch">
+            <div class="swatch-color" style="background-color: #FFFFFF; border-bottom: 1px solid var(--color-rule-subtle);"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Surface</div>
+              <div class="swatch-hex">#FFFFFF</div>
+            </div>
+          </div>
+          <div class="token-swatch">
+            <div class="swatch-color" style="background-color: #191B1D;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Ink (Primary)</div>
+              <div class="swatch-hex">#191B1D</div>
+            </div>
+          </div>
+          <div class="token-swatch">
+            <div class="swatch-color" style="background-color: #5C6268;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Ink Muted</div>
+              <div class="swatch-hex">#5C6268</div>
+            </div>
+          </div>
+          <div class="token-swatch">
+            <div class="swatch-color" style="background-color: #DADBD6;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Rule / Border</div>
+              <div class="swatch-hex">#DADBD6</div>
+            </div>
+          </div>
+          <div class="token-swatch">
+            <div class="swatch-color" style="background-color: #202B35;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Deep Tone</div>
+              <div class="swatch-hex">#202B35</div>
+            </div>
+          </div>
+          <div class="token-swatch">
+            <div class="swatch-color" style="background-color: #B85C3B;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Brand Accent</div>
+              <div class="swatch-hex">#B85C3B</div>
+            </div>
+          </div>
+          <div class="token-swatch">
+            <div class="swatch-color" style="background-color: #F1E5DF;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Accent Soft</div>
+              <div class="swatch-hex">#F1E5DF</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. Typography Hierarchy -->
+    <section class="section section-surface">
+      <div class="container">
+        <span class="eyebrow">Hierarchy & Typography</span>
+        <h2>02. Fluid Typography Scale</h2>
+        <p>Utilizing <code>Plus Jakarta Sans</code> for bold editorial headings and <code>Inter</code> for high-legibility body copy.</p>
+
+        <div style="margin-top: var(--space-2xl); display: flex; flex-direction: column; gap: var(--space-xl);">
+          <div>
+            <span class="text-body-sm" style="color: var(--color-ink-faint); font-family: var(--font-mono);">Display Title (clamp: 38px -> 72px)</span>
+            <div class="display-title">Enterprise Digital Solutions</div>
+          </div>
+          <hr>
+          <div>
+            <span class="text-body-sm" style="color: var(--color-ink-faint); font-family: var(--font-mono);">Heading 1 (clamp: 34px -> 60px)</span>
+            <h1>Engineering Scalable Digital Infrastructure</h1>
+          </div>
+          <hr>
+          <div>
+            <span class="text-body-sm" style="color: var(--color-ink-faint); font-family: var(--font-mono);">Heading 2 (clamp: 28px -> 44px)</span>
+            <h2>Architecting Enterprise Web & AI Applications</h2>
+          </div>
+          <hr>
+          <div>
+            <span class="text-body-sm" style="color: var(--color-ink-faint); font-family: var(--font-mono);">Heading 3 (clamp: 20px -> 28px)</span>
+            <h3>Modern Cloud Integration & System Security</h3>
+          </div>
+          <hr>
+          <div>
+            <span class="text-body-sm" style="color: var(--color-ink-faint); font-family: var(--font-mono);">Lead Paragraph</span>
+            <p class="lead">We partner with global enterprises to modernize mission-critical systems, streamline operations, and build next-generation web products that drive measurable business outcomes.</p>
+          </div>
+          <hr>
+          <div>
+            <span class="text-body-sm" style="color: var(--color-ink-faint); font-family: var(--font-mono);">Editorial Blockquote (Newsreader Serif)</span>
+            <blockquote>“The hallmark of high-grade engineering is not decorative complexity, but unmistakable clarity and effortless reliability under load.”</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. Buttons & Interactive Controls -->
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Action Elements</span>
+        <h2>03. Button Language & Controls</h2>
+        <p>Consistent, restrained controls designed for accessibility and strong tactile feedback.</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: center; margin-top: var(--space-xl);">
+          <a href="#" class="btn btn-primary">Primary Action</a>
+          <a href="#" class="btn btn-accent">Accent Action</a>
+          <a href="#" class="btn btn-secondary">Secondary Outline</a>
+          <a href="#" class="btn btn-primary btn-lg">Large Action</a>
+          <a href="#" class="btn btn-secondary btn-sm">Small Filter</a>
+          <a href="#" class="btn-text">Learn more about our process</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Reusable Component Patterns -->
+    <section class="section section-surface">
+      <div class="container">
+        <span class="eyebrow">Components</span>
+        <h2>04. Service Cards & Layout Grid</h2>
+        <p>Clean asymmetric layouts and information-dense, readable card modules.</p>
+
+        <div class="grid-3" style="margin-top: var(--space-xl);">
+          <div class="card service-card">
+            <span class="service-num">01 / SERVICE</span>
+            <h3 class="service-title">Web Application Development</h3>
+            <p class="service-desc">Tailored, performant web applications engineered for security, high throughput, and seamless third-party API connectivity.</p>
+            <a href="#" class="btn-text">Explore Service</a>
+          </div>
+
+          <div class="card service-card">
+            <span class="service-num">02 / SERVICE</span>
+            <h3 class="service-title">AI & SaaS Solutions</h3>
+            <p class="service-desc">Custom AI automation pipelines, intelligent voice agents, and multi-tenant cloud platforms designed for enterprise scaling.</p>
+            <a href="#" class="btn-text">Explore Service</a>
+          </div>
+
+          <div class="card service-card">
+            <span class="service-num">03 / SERVICE</span>
+            <h3 class="service-title">Enterprise ERP & Portals</h3>
+            <p class="service-desc">Integrated ERP, HRMS, and inventory systems modernizing complex logistics and legacy business operations.</p>
+            <a href="#" class="btn-text">Explore Service</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. Process Steps & Deep Section -->
+    <section class="section section-deep">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" style="color: #E29B7F;">Methodology</span>
+          <h2>05. Development Process Sequence</h2>
+          <p class="section-description">A structured delivery framework designed to de-risk delivery and maintain total transparency.</p>
+        </div>
+
+        <div class="process-list">
+          <div class="process-step">
+            <h4>01. Discovery & Architecture</h4>
+            <p>Defining architectural boundaries, technology constraints, and core business metrics before writing code.</p>
+          </div>
+          <div class="process-step">
+            <h4>02. Iterative Engineering</h4>
+            <p>Agile development sprints with continuous integration, unit validation, and weekly stakeholder demos.</p>
+          </div>
+          <div class="process-step">
+            <h4>03. Rigorous QA & Audit</h4>
+            <p>End-to-end performance benchmarking, WCAG 2.2 accessibility verification, and security penetration checks.</p>
+          </div>
+          <div class="process-step">
+            <h4>04. Deployment & SLA</h4>
+            <p>Zero-downtime production deployment, DNS cutover, monitoring telemetry, and guaranteed maintenance support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. Interactive FAQ Accordion -->
+    <section class="section">
+      <div class="container-narrow">
+        <span class="eyebrow">Interaction Pattern</span>
+        <h2>06. Accessible Accordion (FAQs)</h2>
+        <p>Progressively enhanced, keyboard navigable with explicit ARIA states.</p>
+
+        <div class="accordion" style="margin-top: var(--space-xl);" data-exclusive="true">
+          <div class="accordion-item" open>
+            <button class="accordion-trigger" aria-expanded="true">
+              <span>What is the architecture stack used for this website?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              This site is engineered with Semantic HTML5, CSS3 Custom Properties (Design Tokens), and lightweight modular Vanilla JavaScript (ES6+). It requires zero runtime frameworks, maximizing Core Web Vitals and SEO crawlability.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>How are forms processed without a custom backend?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              Static forms integrate seamlessly with compliant form handlers (such as Netlify Forms, Formspree, or custom webhook endpoints) with client-side progressive validation and explicit success/failure states.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>Are international location landing pages customized?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              Yes. Rather than duplicate doorway templates, each international page features region-tailored case studies, local business context, and accurate contact channels.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. Form Controls & Validation -->
+    <section class="section section-surface">
+      <div class="container-narrow">
+        <span class="eyebrow">Data Collection</span>
+        <h2>07. Form Controls & Validation States</h2>
+        <p>Clean inputs with accessible labeling, focus rings, and validation feedback.</p>
+
+        <form style="margin-top: var(--space-xl);" onsubmit="event.preventDefault();">
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="sample-name" class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" id="sample-name" class="form-input" placeholder="e.g. Eleanor Vance" required>
+            </div>
+            <div class="form-group">
+              <label for="sample-email" class="form-label">Business Email <span class="required">*</span></label>
+              <input type="email" id="sample-email" class="form-input" placeholder="name@company.com" required>
+            </div>
+          </div>
+
+          <div class="form-group has-error">
+            <label for="sample-service" class="form-label">Primary Interest</label>
+            <select id="sample-service" class="form-select">
+              <option value="">Please select a service...</option>
+              <option value="web">Web Application Development</option>
+              <option value="ai">AI & SaaS Solutions</option>
+              <option value="erp">Enterprise ERP Software</option>
+            </select>
+            <span class="form-error">Please select a service before proceeding.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="sample-message" class="form-label">Project Overview</label>
+            <textarea id="sample-message" rows="4" class="form-textarea" placeholder="Briefly outline your requirements, scope, or timeline..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Test Enquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Spec Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="site-logo" style="color: #FFFFFF; margin-bottom: var(--space-sm);">
+            <span>[Company Name]</span>
+            <span class="logo-dot"></span>
+          </div>
+          <p style="color: var(--color-deep-muted); max-width: 32ch;">International technology solutions, custom software engineering, and enterprise digital transformation.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Web Applications</a></li>
+            <li><a href="#">AI & SaaS Solutions</a></li>
+            <li><a href="#">Enterprise Software</a></li>
+            <li><a href="#">Cloud & DevOps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Process</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="#">Request a Quote</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Client Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 [Company Name]. All rights reserved.</div>
+        <div style="display: flex; gap: var(--space-lg);">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
+

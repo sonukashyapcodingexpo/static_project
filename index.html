@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Company Name] — Enterprise Software, AI & Digital Engineering</title>
+  <meta name="description" content="International digital consultancy delivering custom web applications, enterprise ERP, and scalable AI solutions.">
+  <link rel="icon" type="image/svg+xml" href="./assets/images/brand/favicon.svg">
+
+  <!-- Core Design System -->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/variables.css">
+  <link rel="stylesheet" href="./assets/css/global.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
+  <link rel="stylesheet" href="./assets/css/pages/home.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="site-logo" aria-label="Homepage">
+        <span>[Company Name]</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="./index.html" class="nav-link active">Home</a>
+        <a href="./services/index.html" class="nav-link">Services</a>
+        <a href="./about-us/index.html" class="nav-link">About Us</a>
+        <a href="./portfolio/index.html" class="nav-link">Portfolio</a>
+        <a href="./case-studies/index.html" class="nav-link">Case Studies</a>
+        <a href="./contact-us/index.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions d-flex align-center gap-md">
+        <a href="./request-a-quote/index.html" class="btn btn-primary hide-mobile">Request a Quote</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- 1. Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="split-6-6">
+          <div class="hero-content reveal">
+            <span class="eyebrow">Enterprise Technology Consultancy</span>
+            <h1 class="display-title">Engineering Digital Systems with Precision.</h1>
+            <p class="lead">
+              We design and construct high-performance web applications, bespoke enterprise software, and secure AI infrastructure for organisations demanding stability and scale.
+            </p>
+            <div class="hero-actions">
+              <a href="./request-a-quote/index.html" class="btn btn-accent btn-lg">Start a Project</a>
+              <a href="./services/index.html" class="btn btn-secondary btn-lg">Explore Services</a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal delay-100">
+            <div class="hero-visual-card" style="padding: 0; overflow: hidden;">
+              <div style="padding: var(--space-xs) var(--space-md); background: var(--color-surface); border-bottom: 1px solid var(--color-rule); display: flex; align-items: center; justify-content: space-between;">
+                <div class="hero-terminal-bar" style="margin: 0;">
+                  <span class="terminal-dot"></span>
+                  <span class="terminal-dot"></span>
+                  <span class="terminal-dot"></span>
+                  <span style="font-family: var(--font-mono); font-size: var(--text-eyebrow); color: var(--color-ink-muted); margin-left: 8px;">production.infrastructure.sys</span>
+                </div>
+                <span class="badge badge-accent" style="font-size: 10px;">Live Operations</span>
+              </div>
+              <img src="./assets/images/hero/homepage-technology-hero.png" alt="Executive viewing panoramic enterprise system architecture and real-time operational dashboard" width="1200" height="800" fetchpriority="high" style="display: block; width: 100%; height: auto; object-fit: cover;">
+              <div style="padding: var(--space-md); background: var(--color-surface); border-top: 1px solid var(--color-rule); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-xs);">
+                <div style="font-size: var(--text-body-sm); font-weight: var(--fw-semibold);">Enterprise Multi-Region Core</div>
+                <div style="font-family: var(--font-mono); font-size: var(--text-eyebrow); color: var(--color-ink-muted);">API v3.2 • 99.99% SLA • &lt; 38ms</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Proof Strip -->
+    <div class="proof-strip">
+      <div class="container">
+        <div class="proof-inner">
+          <span class="proof-label">Core Competencies</span>
+          <div class="proof-items">
+            <span class="proof-badge">✓ High-Scale Cloud Architecture</span>
+            <span class="proof-badge">✓ Custom AI Workflow Automation</span>
+            <span class="proof-badge">✓ Multi-Region Enterprise ERP</span>
+            <span class="proof-badge">✓ WCAG 2.2 AA Accessibility</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Core Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Solutions Portfolio</span>
+          <h2>Disciplined Engineering for Critical Operations</h2>
+          <p class="section-description">
+            Each solution is architected from the foundation up to align with your organization’s security posture and long-term roadmap.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card service-card reveal" style="padding: 0; overflow: hidden;">
+            <img src="./assets/images/services/website-development-service.png" alt="Web application development architecture" width="600" height="400" style="width: 100%; height: 190px; object-fit: cover; display: block;">
+            <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex-grow: 1;">
+              <span class="service-num">01 // WEB & APP PLATFORMS</span>
+              <h3 class="service-title">Web Application Development</h3>
+              <p class="service-desc">Robust web platforms engineered with semantic code, lightning-fast rendering, and custom REST & GraphQL integrations.</p>
+              <a href="./web-application-development/index.html" class="btn-text">View capabilities</a>
+            </div>
+          </div>
+
+          <div class="card service-card reveal delay-100" style="padding: 0; overflow: hidden;">
+            <img src="./assets/images/services/ai-development.png" alt="AI and SaaS development architecture" width="600" height="400" style="width: 100%; height: 190px; object-fit: cover; display: block;">
+            <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex-grow: 1;">
+              <span class="service-num">02 // ARTIFICIAL INTELLIGENCE</span>
+              <h3 class="service-title">AI & SaaS Development</h3>
+              <p class="service-desc">Practical machine learning integrations, autonomous customer voice agents, and multi-tenant SaaS application backbones.</p>
+              <a href="./ai-development/index.html" class="btn-text">View capabilities</a>
+            </div>
+          </div>
+
+          <div class="card service-card reveal delay-200" style="padding: 0; overflow: hidden;">
+            <img src="./assets/images/services/erp-crm-development.png" alt="Enterprise ERP software architecture" width="600" height="400" style="width: 100%; height: 190px; object-fit: cover; display: block;">
+            <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex-grow: 1;">
+              <span class="service-num">03 // ENTERPRISE SOFTWARE</span>
+              <h3 class="service-title">Enterprise ERP & Portals</h3>
+              <p class="service-desc">Consolidated enterprise resource planning, supply chain coordination, billing, and custom B2B supplier portals.</p>
+              <a href="./erp-development/index.html" class="btn-text">View capabilities</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Featured Case Study -->
+    <section id="case-studies" class="section section-surface">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Proven Outcomes</span>
+          <h2>Featured Case Study</h2>
+          <p class="section-description">How we modernized global logistics coordination for an international distribution partner.</p>
+        </div>
+
+        <div class="featured-project reveal">
+          <div class="project-details">
+            <div>
+              <span class="badge badge-accent">Supply Chain & Logistics</span>
+              <h3 style="margin-top: var(--space-sm); margin-bottom: var(--space-md);">Enterprise Multi-Region Inventory Hub</h3>
+              <p>Replaced disjointed legacy spreadsheets and localized databases with a unified, real-time inventory management platform across 14 global fulfillment nodes.</p>
+              
+              <div style="margin-top: var(--space-lg); display: flex; gap: var(--space-xl);">
+                <div class="stat-item">
+                  <div class="stat-number">48%</div>
+                  <div class="stat-label">Reduction in order fulfillment cycle</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">99.98%</div>
+                  <div class="stat-label">Stock allocation accuracy</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-xl);">
+              <a href="./case-studies/index.html" class="btn btn-secondary">Read Full Case Study</a>
+            </div>
+          </div>
+
+          <div class="project-preview" style="padding: 0; overflow: hidden; background: var(--color-canvas);">
+            <img src="./assets/images/services/inventory-logistics-software.png" alt="Enterprise multi-region inventory hub dashboard preview" width="800" height="600" style="width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Process Sequence -->
+    <section id="process" class="section section-deep">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" style="color: #E29B7F;">Our Methodology</span>
+          <h2>How We Build</h2>
+          <p class="section-description">A systematic four-stage framework eliminating ambiguity and guaranteeing production stability.</p>
+        </div>
+
+        <div class="process-list">
+          <div class="process-step">
+            <h4>01. Discovery & Spec</h4>
+            <p>Defining architectural boundaries, technology constraints, and core business metrics before writing a line of code.</p>
+          </div>
+          <div class="process-step">
+            <h4>02. Modular Build</h4>
+            <p>Iterative engineering sprints featuring automated linting, test coverage, and continuous client preview builds.</p>
+          </div>
+          <div class="process-step">
+            <h4>03. Rigorous Audit</h4>
+            <p>Full-spectrum performance profiling, cross-browser validation, and WCAG 2.2 AA accessibility verification.</p>
+          </div>
+          <div class="process-step">
+            <h4>04. Cutover & Support</h4>
+            <p>DNS propagation, zero-downtime static deployment, real-time telemetry, and continuous SLA support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FAQs Preview -->
+    <section id="faqs" class="section">
+      <div class="container-narrow">
+        <div class="section-header text-center">
+          <span class="eyebrow">Clarity & Trust</span>
+          <h2>Frequently Asked Questions</h2>
+          <p class="section-description">Answers to key architectural and operational queries.</p>
+        </div>
+
+        <div class="accordion" data-exclusive="true">
+          <div class="accordion-item" open>
+            <button class="accordion-trigger" aria-expanded="true">
+              <span>What technical stack is used for your web implementations?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              We leverage semantic HTML5, modern CSS3 custom properties, and vanilla modular JavaScript. This ensures high speed, maximum security, zero runtime overhead, and optimal Core Web Vitals.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>Can these static interfaces integrate with our existing backend or ERP?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              Absolutely. Our architectures interface effortlessly with RESTful services, GraphQL gateways, enterprise webhooks, and third-party authentication providers.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>How do you handle multi-country deployments and localization?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              We engineer dedicated, localized landing hubs with custom currency considerations, regional contact channels, and localized compliance notices rather than simple cloned pages.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Closing CTA Banner -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="split-7-5">
+            <div>
+              <span class="eyebrow" style="color: #E29B7F;">Start the Conversation</span>
+              <h2 style="color: #FFFFFF; margin-bottom: var(--space-md);">Ready to engineer your next digital solution?</h2>
+              <p style="color: var(--color-deep-muted); max-width: 54ch;">
+                Speak directly with a solutions architect to discuss specifications, timelines, and tailored commercial terms.
+              </p>
+            </div>
+            <div style="display: flex; gap: var(--space-md); justify-content: flex-start; align-items: center; flex-wrap: wrap;">
+              <a href="mailto:contact@company.com" class="btn btn-accent btn-lg">Request Consultation</a>
+              <a href="./design-system.html" class="btn btn-secondary btn-lg" style="color: #FFFFFF; border-color: var(--color-deep-rule);">View Design System</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="site-logo" style="color: #FFFFFF; margin-bottom: var(--space-sm);">
+            <span>[Company Name]</span>
+            <span class="logo-dot"></span>
+          </div>
+          <p style="color: var(--color-deep-muted); max-width: 32ch;">
+            Bespoke software architecture, intelligent enterprise systems, and high-performance digital solutions.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="./services/index.html">Web Applications</a></li>
+            <li><a href="./services/index.html">AI & SaaS Development</a></li>
+            <li><a href="./services/index.html">Enterprise ERP</a></li>
+            <li><a href="./services/index.html">All Services Hub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="./about-us/index.html">About Us</a></li>
+            <li><a href="./locations/index.html">Global Locations</a></li>
+            <li><a href="./our-team/index.html">Our Team</a></li>
+            <li><a href="./careers/index.html">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="./portfolio/index.html">Portfolio</a></li>
+            <li><a href="./case-studies/index.html">Case Studies</a></li>
+            <li><a href="./faqs/index.html">FAQs</a></li>
+            <li><a href="./contact-us/index.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 [Company Name]. All rights reserved.</div>
+        <div style="display: flex; gap: var(--space-lg);">
+          <a href="./privacy-policy/index.html">Privacy Policy</a>
+          <a href="./terms-conditions/index.html">Terms & Conditions</a>
+          <a href="./sitemap.html">Sitemap</a>
+          <a href="./design-system.html">Design System Spec</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
+

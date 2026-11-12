@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Layout, Containers & Grid System
+   ========================================================================== */
+
+/* --- Container Wrappers --- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* --- Section Surfaces & Spacing --- */
+.section {
+  padding-top: clamp(3.5rem, 2.5rem + 3.5vw, 6.5rem);
+  padding-bottom: clamp(3.5rem, 2.5rem + 3.5vw, 6.5rem);
+  position: relative;
+}
+
+.section-sm {
+  padding-top: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  padding-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+}
+
+.section-lg {
+  padding-top: clamp(4.5rem, 3.5rem + 4.5vw, 8.5rem);
+  padding-bottom: clamp(4.5rem, 3.5rem + 4.5vw, 8.5rem);
+}
+
+.section-surface {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-rule-subtle);
+  border-bottom: 1px solid var(--color-rule-subtle);
+}
+
+.section-deep {
+  background-color: var(--color-deep);
+  color: var(--color-deep-ink);
+  border-top: 1px solid var(--color-deep-rule);
+  border-bottom: 1px solid var(--color-deep-rule);
+}
+
+.section-deep h1,
+.section-deep h2,
+.section-deep h3,
+.section-deep h4,
+.section-deep .display-title {
+  color: var(--color-deep-ink);
+}
+
+.section-deep p,
+.section-deep .text-muted {
+  color: var(--color-deep-muted);
+}
+
+.section-deep hr {
+  border-top-color: var(--color-deep-rule);
+}
+
+/* --- Section Headers --- */
+.section-header {
+  margin-bottom: clamp(2rem, 1.5rem + 1.8vw, 3.5rem);
+}
+
+.section-header.text-center {
+  text-align: center;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header .section-description {
+  margin-top: var(--space-sm);
+  font-size: var(--text-body-lg);
+  color: var(--color-ink-muted);
+  max-width: 64ch;
+}
+
+.section-deep .section-header .section-description {
+  color: var(--color-deep-muted);
+}
+
+/* --- Editorial Grid Layouts --- */
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+/* Asymmetric Splits */
+.split-5-7 {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 1.5rem + 2vw, 4rem);
+  align-items: center;
+}
+
+.split-7-5 {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: clamp(2rem, 1.5rem + 2vw, 4rem);
+  align-items: center;
+}
+
+.split-6-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 1.5rem + 2vw, 4rem);
+  align-items: center;
+}
+
+/* Responsive Overrides for Grids */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .split-5-7,
+  .split-7-5,
+  .split-6-6 {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+

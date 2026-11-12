@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
+  <url><loc>https://www.example.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.example.com/about-us/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/services/</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.example.com/portfolio/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.example.com/case-studies/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/our-team/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/careers/</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.example.com/contact-us/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/request-a-quote/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/faqs/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/testimonials/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/technology-stack/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/industries/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/our-process/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/why-choose-us/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/partners-certifications/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/life-at-company/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/blog/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.example.com/blog/articles/example-article/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/privacy-policy/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.example.com/terms-conditions/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+
+  <!-- Website & Web Development (7) -->
+  <url><loc>https://www.example.com/website-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/web-application-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/api-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/mobile-app-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/website-design/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/web-app-ui-ux-design/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/mobile-app-design/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- CMS & E-Commerce (4) -->
+  <url><loc>https://www.example.com/wordpress-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/ecommerce-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/enterprise-ecommerce/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/website-maintenance/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- AI & SaaS Solutions (8) -->
+  <url><loc>https://www.example.com/ai-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/ai-voice-agents/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/ai-chatbot-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/saas-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/software-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/software-product-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/legacy-modernization/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/business-process-automation/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Enterprise Software & ERP (13) -->
+  <url><loc>https://www.example.com/erp-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/crm-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/hrms-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/inventory-management-software/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/billing-invoicing-software/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/logistics-software/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/school-management-software/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/hospital-management-software/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/hotel-management-software/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/coaching-institute-software/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/real-estate-portal-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/b2b-portal-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/travel-portal-development/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- SEO & Digital Marketing (5) -->
+  <url><loc>https://www.example.com/digital-marketing/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/seo-services/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/social-media-marketing/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/ppc-management/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/international-seo/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- International Locations Hubs (5 + 1) -->
+  <url><loc>https://www.example.com/locations/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/software-development-company-usa/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/software-development-company-uk/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/software-development-company-canada/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/software-development-company-australia/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.example.com/software-development-company-uae/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+</urlset>

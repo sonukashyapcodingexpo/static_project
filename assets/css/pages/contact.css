@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Contact & Quote Specific Styles
+   ========================================================================== */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 1.5rem + 3vw, 5rem);
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+}
+
+.contact-method {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: var(--fw-bold);
+}
+
+.quote-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.quote-option-label {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.quote-option-label:hover {
+  border-color: var(--color-ink-muted);
+}
+
+.quote-option-label input[type="radio"],
+.quote-option-label input[type="checkbox"] {
+  margin-bottom: var(--space-xs);
+  accent-color: var(--color-accent);
+}
+

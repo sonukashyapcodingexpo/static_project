@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Blog & Technical Insights | [Company Name]</title>
+  <meta name="description" content="Technical perspectives on enterprise software architecture, AI integration, high-performance web engineering, and cloud scalability.">
+
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/pages/service.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <span>[Company Name]</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../services/index.html" class="nav-link">Services</a>
+        <a href="../about-us/index.html" class="nav-link">About Us</a>
+        <a href="../portfolio/index.html" class="nav-link">Portfolio</a>
+        <a href="../case-studies/index.html" class="nav-link">Case Studies</a>
+        <a href="./index.html" class="nav-link active">Blog</a>
+        <a href="../contact-us/index.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="d-flex align-center gap-md">
+        <a href="../request-a-quote/index.html" class="btn btn-primary hide-mobile">Request a Quote</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumbs-separator">/</span>
+          <span class="breadcrumbs-current">Blog</span>
+        </nav>
+
+        <div class="section-header">
+          <span class="eyebrow">Engineering Perspectives</span>
+          <h1>Technical Articles & Systems Insights</h1>
+          <p class="section-description">
+            In-depth architectural write-ups, performance case studies, and engineering practices written by our principal technical team.
+          </p>
+        </div>
+
+        <!-- Featured Article -->
+        <article class="card" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl); background: var(--color-surface);">
+          <div class="split-7-5">
+            <div>
+              <div class="d-flex align-center gap-xs" style="margin-bottom: var(--space-xs);">
+                <span class="badge badge-accent">Featured Architecture</span>
+                <span class="text-eyebrow" style="color: var(--color-ink-faint);">8 min read</span>
+              </div>
+              <h2>Architecting High-Throughput Event-Driven Microservices with Kafka and Go</h2>
+              <p class="lead" style="margin-top: var(--space-xs); margin-bottom: var(--space-lg);">
+                A deep dive into replacing blocking synchronous REST endpoints with idempotent event streams to survive 10x traffic spikes without degrading database performance.
+              </p>
+              <a href="./articles/example-article/index.html" class="btn btn-primary">Read Full Article →</a>
+            </div>
+            <div style="background: var(--color-canvas); padding: var(--space-xl); border-radius: var(--radius-sm); border: 1px solid var(--color-rule); display: flex; flex-direction: column; justify-content: center;">
+              <div style="font-family: var(--font-mono); font-size: var(--text-eyebrow); color: var(--color-accent); margin-bottom: var(--space-2xs);">AUTHOR</div>
+              <div style="font-weight: var(--fw-bold);">Marcus Vance</div>
+              <div style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Chief Technology Officer</div>
+              <hr style="margin: var(--space-sm) 0;">
+              <div style="font-size: var(--text-eyebrow); color: var(--color-ink-faint);">Published November 2026 • Systems Engineering</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article Listing Grid -->
+        <div class="grid-3">
+          <!-- Article 2 -->
+          <article class="card">
+            <span class="badge" style="width: fit-content; margin-bottom: var(--space-xs);">Frontend Performance</span>
+            <h3>Why Vanilla JavaScript and Semantic HTML Outperform Heavy SPAs</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted); margin-bottom: var(--space-md);">
+              How eliminating client-side hydration frameworks reduces TTFB by 80% and guarantees perfect Core Web Vitals.
+            </p>
+            <a href="./articles/example-article/index.html" class="btn-text">Read Article</a>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="card">
+            <span class="badge" style="width: fit-content; margin-bottom: var(--space-xs);">Enterprise AI</span>
+            <h3>Grounding Generative AI in Production: Mitigating Hallucinations via RAG</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted); margin-bottom: var(--space-md);">
+              Practical lessons from deploying vector embeddings and semantic search across 200,000 regulatory documents.
+            </p>
+            <a href="./articles/example-article/index.html" class="btn-text">Read Article</a>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="card">
+            <span class="badge" style="width: fit-content; margin-bottom: var(--space-xs);">ERP Modernization</span>
+            <h3>The Strangler Fig Pattern: Decommissioning Monoliths Safely</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted); margin-bottom: var(--space-md);">
+              How to carve out core banking and supply chain systems step-by-step with zero customer-facing downtime.
+            </p>
+            <a href="./articles/example-article/index.html" class="btn-text">Read Article</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 [Company Name]. All rights reserved.</div>
+        <div style="display: flex; gap: var(--space-lg);">
+          <a href="../privacy-policy/index.html">Privacy Policy</a>
+          <a href="../terms-conditions/index.html">Terms & Conditions</a>
+          <a href="../sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
+

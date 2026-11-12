@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies & Architecture Deep-Dives | [Company Name]</title>
+  <meta name="description" content="In-depth analysis of engineering challenges, solutions, and audited performance metrics across enterprise client implementations.">
+
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/pages/service.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <span>[Company Name]</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../services/index.html" class="nav-link">Services</a>
+        <a href="../about-us/index.html" class="nav-link">About Us</a>
+        <a href="../portfolio/index.html" class="nav-link">Portfolio</a>
+        <a href="../case-studies/index.html" class="nav-link active">Case Studies</a>
+        <a href="../contact-us/index.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="d-flex align-center gap-md">
+        <a href="../request-a-quote/index.html" class="btn btn-primary hide-mobile">Request a Quote</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumbs-separator">/</span>
+          <span class="breadcrumbs-current">Case Studies</span>
+        </nav>
+
+        <div class="section-header">
+          <span class="eyebrow">Technical Architecture</span>
+          <h1>In-Depth Enterprise Case Studies</h1>
+          <p class="section-description">
+            Transparent accounts of technical challenges, architectural compromises, and verifiable production metrics.
+          </p>
+        </div>
+
+        <div class="grid" style="gap: var(--space-3xl);">
+          <!-- Case Study 01 -->
+          <article class="card" style="padding: var(--space-2xl);">
+            <div class="split-7-5">
+              <div>
+                <div class="d-flex gap-xs" style="margin-bottom: var(--space-xs);">
+                  <span class="badge badge-accent">Supply Chain & Logistics</span>
+                  <span class="badge">Global Enterprise Client</span>
+                </div>
+                <h2>Modernizing Multi-Region Inventory & Logistics Hub</h2>
+                <p class="lead" style="margin-top: var(--space-sm);">
+                  Replacing a legacy spreadsheet network and outdated mainframe terminals with an event-driven warehouse management system across 14 international depots.
+                </p>
+
+                <div style="margin-top: var(--space-xl);">
+                  <h4 style="margin-bottom: var(--space-xs);">The Challenge</h4>
+                  <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">
+                    Fragmented regional databases resulted in 48-hour data reconciliation delays, stock allocation conflicts, and frequent shipping mismatches during peak holiday seasons.
+                  </p>
+                </div>
+
+                <div style="margin-top: var(--space-md);">
+                  <h4 style="margin-bottom: var(--space-xs);">The Solution</h4>
+                  <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">
+                    Engineered an event-driven microservices architecture utilizing Kafka streams and distributed caching, feeding an intuitive responsive management dashboard for depot operators.
+                  </p>
+                </div>
+
+                <div class="portfolio-tags" style="margin-top: var(--space-md);">
+                  <span class="tag-pill">Apache Kafka</span>
+                  <span class="tag-pill">Node.js microservices</span>
+                  <span class="tag-pill">PostgreSQL</span>
+                  <span class="tag-pill">Docker / Kubernetes</span>
+                </div>
+              </div>
+
+              <!-- Metrics Column -->
+              <div style="background: var(--color-canvas); padding: var(--space-xl); border-radius: var(--radius-sm); border: 1px solid var(--color-rule); display: flex; flex-direction: column;">
+                <div style="margin-bottom: var(--space-lg); border-radius: var(--radius-sm); overflow: hidden; height: 180px;">
+                  <img src="../assets/images/services/inventory-logistics-software.png" alt="Multi-region logistics architecture preview" width="600" height="375" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <span class="eyebrow">Audited Outcomes</span>
+                <div style="display: flex; flex-direction: column; gap: var(--space-lg); margin-top: var(--space-md);">
+                  <div class="stat-item">
+                    <div class="stat-number">48%</div>
+                    <div class="stat-label">Reduction in order fulfillment processing time</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-number">99.98%</div>
+                    <div class="stat-label">Stock synchronization accuracy across nodes</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-number">&lt; 150ms</div>
+                    <div class="stat-label">P99 query response latency</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 02 -->
+          <article class="card" style="padding: var(--space-2xl);">
+            <div class="split-7-5">
+              <div>
+                <div class="d-flex gap-xs" style="margin-bottom: var(--space-xs);">
+                  <span class="badge badge-accent">Financial Services</span>
+                  <span class="badge">Fintech Banking Partner</span>
+                </div>
+                <h2>Automated Commercial Loan Risk Assessment Engine</h2>
+                <p class="lead" style="margin-top: var(--space-sm);">
+                  Building an explainable machine learning scoring engine capable of validating compliance data and risk signals in real time.
+                </p>
+
+                <div style="margin-top: var(--space-xl);">
+                  <h4 style="margin-bottom: var(--space-xs);">The Challenge</h4>
+                  <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">
+                    Underwriting teams spent an average of 4 business days manually gathering filings, bank statements, and tax documentation for mid-market corporate loan applicants.
+                  </p>
+                </div>
+
+                <div style="margin-top: var(--space-md);">
+                  <h4 style="margin-bottom: var(--space-xs);">The Solution</h4>
+                  <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">
+                    Designed a secure automated pipeline integrating OCR document verification, regulatory AML sanity checks, and a transparent XGBoost decision model.
+                  </p>
+                </div>
+
+                <div class="portfolio-tags" style="margin-top: var(--space-md);">
+                  <span class="tag-pill">Python</span>
+                  <span class="tag-pill">FastAPI</span>
+                  <span class="tag-pill">AWS KMS Encryption</span>
+                  <span class="tag-pill">XGBoost</span>
+                </div>
+              </div>
+
+              <!-- Metrics Column -->
+              <div style="background: var(--color-canvas); padding: var(--space-xl); border-radius: var(--radius-sm); border: 1px solid var(--color-rule); display: flex; flex-direction: column;">
+                <div style="margin-bottom: var(--space-lg); border-radius: var(--radius-sm); overflow: hidden; height: 180px;">
+                  <img src="../assets/images/services/ai-development.png" alt="Fintech risk assessment scoring model preview" width="600" height="375" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <span class="eyebrow">Audited Outcomes</span>
+                <div style="display: flex; flex-direction: column; gap: var(--space-lg); margin-top: var(--space-md);">
+                  <div class="stat-item">
+                    <div class="stat-number">82%</div>
+                    <div class="stat-label">Reduction in initial loan assessment turnaround</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-number">Zero</div>
+                    <div class="stat-label">Data leaks or compliance breaches post-launch</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-number">3.2x</div>
+                    <div class="stat-label">Increase in monthly processed volume capacity</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation CTA -->
+    <section class="section section-deep text-center">
+      <div class="container-narrow">
+        <h2>Have an architectural challenge of similar complexity?</h2>
+        <p class="section-description" style="margin-left: auto; margin-right: auto; margin-bottom: var(--space-xl);">
+          We provide confidential technical advisory sessions to review your current bottlenecks and propose structured roadmaps.
+        </p>
+        <a href="../request-a-quote/index.html" class="btn btn-accent btn-lg">Request Project Evaluation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 [Company Name]. All rights reserved.</div>
+        <div style="display: flex; gap: var(--space-lg);">
+          <a href="../privacy-policy/index.html">Privacy Policy</a>
+          <a href="../terms-conditions/index.html">Terms & Conditions</a>
+          <a href="../sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Project Quote | [Company Name]</title>
+  <meta name="description" content="Submit your project requirements, scope parameters, and timeline for an engineering estimate and proposal.">
+
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/pages/contact.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <span>[Company Name]</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../services/index.html" class="nav-link">Services</a>
+        <a href="../about-us/index.html" class="nav-link">About Us</a>
+        <a href="../portfolio/index.html" class="nav-link">Portfolio</a>
+        <a href="../contact-us/index.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="d-flex align-center gap-md">
+        <a href="../request-a-quote/index.html" class="btn btn-primary hide-mobile">Request a Quote</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container-narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumbs-separator">/</span>
+          <span class="breadcrumbs-current">Request a Quote</span>
+        </nav>
+
+        <div class="section-header">
+          <span class="eyebrow">Project Scoping</span>
+          <h1>Request an Engineering Estimate</h1>
+          <p class="section-description">
+            Share your project specifications, technology constraints, and target delivery windows. We prepare detailed architectural estimates without obligation.
+          </p>
+        </div>
+
+        <div class="card" style="padding: var(--space-2xl);">
+          <form data-validate="true">
+            <!-- 1. Project Type -->
+            <div class="form-group">
+              <label class="form-label">1. Primary Project Scope <span class="required">*</span></label>
+              <div class="quote-options-grid">
+                <label class="quote-option-label">
+                  <input type="radio" name="project_type" value="web-app" required checked>
+                  <span style="font-weight: var(--fw-semibold); font-size: var(--text-body-sm);">Web Application</span>
+                  <span style="font-size: var(--text-eyebrow); color: var(--color-ink-faint);">Custom portal or platform</span>
+                </label>
+                <label class="quote-option-label">
+                  <input type="radio" name="project_type" value="ai-saas">
+                  <span style="font-weight: var(--fw-semibold); font-size: var(--text-body-sm);">AI / SaaS Product</span>
+                  <span style="font-size: var(--text-eyebrow); color: var(--color-ink-faint);">ML pipeline or cloud SaaS</span>
+                </label>
+                <label class="quote-option-label">
+                  <input type="radio" name="project_type" value="erp-enterprise">
+                  <span style="font-weight: var(--fw-semibold); font-size: var(--text-body-sm);">Enterprise ERP</span>
+                  <span style="font-size: var(--text-eyebrow); color: var(--color-ink-faint);">Supply chain, HRMS, billing</span>
+                </label>
+                <label class="quote-option-label">
+                  <input type="radio" name="project_type" value="ecommerce">
+                  <span style="font-weight: var(--fw-semibold); font-size: var(--text-body-sm);">E-Commerce</span>
+                  <span style="font-size: var(--text-eyebrow); color: var(--color-ink-faint);">Headless commerce engine</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- 2. Budget Range -->
+            <div class="form-group">
+              <label class="form-label" for="quote-budget">2. Expected Investment Range</label>
+              <select id="quote-budget" class="form-select">
+                <option value="under-25k">$15,000 – $25,000 (MVP / Initial Sprint)</option>
+                <option value="25k-50k" selected>$25,000 – $50,000 (Standard Production Platform)</option>
+                <option value="50k-100k">$50,000 – $100,000 (Enterprise Multi-Module System)</option>
+                <option value="100k-plus">$100,000+ (High-Scale Multi-Region Infrastructure)</option>
+              </select>
+            </div>
+
+            <!-- 3. Project Overview -->
+            <div class="form-group">
+              <label for="quote-details" class="form-label">3. Functional Requirements & Scope <span class="required">*</span></label>
+              <textarea id="quote-details" rows="5" class="form-textarea" placeholder="Outline your deliverables, required system integrations, user volumes, and current technical blockers..." required></textarea>
+              <span class="form-error">Please share key details regarding your requirements.</span>
+            </div>
+
+            <!-- 4. Contact Information -->
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="quote-name" class="form-label">Your Name <span class="required">*</span></label>
+                <input type="text" id="quote-name" class="form-input" placeholder="e.g. David Miller" required>
+                <span class="form-error">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label for="quote-email" class="form-label">Work Email <span class="required">*</span></label>
+                <input type="email" id="quote-email" class="form-input" placeholder="david@company.com" required>
+                <span class="form-error">Please enter a valid work email address.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="quote-company" class="form-label">Company & Website</label>
+              <input type="text" id="quote-company" class="form-input" placeholder="e.g. Miller Logistics (miller-logistics.com)">
+            </div>
+
+            <button type="submit" class="btn btn-accent btn-lg w-100" style="margin-top: var(--space-md);">Submit Scope for Estimation</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 [Company Name]. All rights reserved.</div>
+        <div style="display: flex; gap: var(--space-lg);">
+          <a href="../privacy-policy/index.html">Privacy Policy</a>
+          <a href="../terms-conditions/index.html">Terms & Conditions</a>
+          <a href="../sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
+

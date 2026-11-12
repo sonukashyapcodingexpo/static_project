@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | [Company Name]</title>
+  <meta name="description" content="Answers to common technical, architectural, operational, and commercial questions about working with [Company Name].">
+
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-logo">
+        <span>[Company Name]</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../services/index.html" class="nav-link">Services</a>
+        <a href="../about-us/index.html" class="nav-link">About Us</a>
+        <a href="../portfolio/index.html" class="nav-link">Portfolio</a>
+        <a href="../faqs/index.html" class="nav-link active">FAQs</a>
+        <a href="../contact-us/index.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="d-flex align-center gap-md">
+        <a href="../request-a-quote/index.html" class="btn btn-primary hide-mobile">Request a Quote</a>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container-narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumbs-separator">/</span>
+          <span class="breadcrumbs-current">FAQs</span>
+        </nav>
+
+        <div class="section-header">
+          <span class="eyebrow">Knowledge & Clarity</span>
+          <h1>Frequently Asked Questions</h1>
+          <p class="section-description">
+            Transparent answers regarding our technical stack, development methodologies, commercial models, and ongoing service agreements.
+          </p>
+        </div>
+
+        <!-- Section 1: Technology & Engineering -->
+        <div style="margin-bottom: var(--space-3xl);">
+          <h2 style="font-size: var(--text-h3); margin-bottom: var(--space-md); color: var(--color-accent);">1. Technology & Architecture</h2>
+          <div class="accordion" data-exclusive="true">
+            <div class="accordion-item" open>
+              <button class="accordion-trigger" aria-expanded="true">
+                <span>Why do you emphasize semantic HTML and vanilla JavaScript over heavy single-page frameworks?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                For corporate platforms and content hubs, static semantic HTML combined with modular CSS and vanilla JavaScript delivers unmatched speed, zero dependency baggage, impervious security surfaces, and maximum SEO indexing efficiency. For dynamic application layers (dashboards, real-time workflows), we build purpose-fit client applications with modern TypeScript and reactive patterns where necessary.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Can your software systems integrate with on-premise ERPs or legacy databases?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                Yes. We frequently build secure API gateways, middleware adaptors, and Kafka event bridges that allow modern cloud frontends to communicate reliably with legacy SAP, Oracle, AS400, or custom SQL databases without compromising internal firewall rules.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>How do you guarantee WCAG 2.2 accessibility compliance?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                Accessibility is embedded from the first wireframe: semantic heading trees, high-contrast palette tokens, visible focus rings, ARIA states for all interactive controls, and full keyboard navigational parity verified by automated audits and manual screen reader testing.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Engagement & Delivery -->
+        <div style="margin-bottom: var(--space-3xl);">
+          <h2 style="font-size: var(--text-h3); margin-bottom: var(--space-md); color: var(--color-accent);">2. Engagements & Timelines</h2>
+          <div class="accordion" data-exclusive="true">
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>What does a typical project timeline look like from kickoff to deployment?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                A focused corporate platform or service hub generally delivers in 4 to 8 weeks. Comprehensive enterprise ERP or multi-tenant SaaS products typically run in 8 to 16 week agile phases, with demonstrable releases delivered every two weeks.
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Who owns the intellectual property and code repositories?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                You do. All custom code, assets, database schemas, and documentation produced during the engagement belong 100% to your organization upon milestone payment.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: SLA & Support -->
+        <div>
+          <h2 style="font-size: var(--text-h3); margin-bottom: var(--space-md); color: var(--color-accent);">3. SLA & Post-Launch Support</h2>
+          <div class="accordion" data-exclusive="true">
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Do you offer ongoing SLA maintenance and infrastructure monitoring?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-content">
+                Yes. We offer Tier-1 to Tier-3 SLA contracts featuring 24/7 uptime monitoring, security patching, monthly dependency updates, and guaranteed response times as short as 1 hour for mission-critical incidents.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: var(--space-3xl); background: var(--color-surface); text-align: center; padding: var(--space-xl);">
+          <h3 style="margin-bottom: var(--space-xs);">Have a question not listed here?</h3>
+          <p style="color: var(--color-ink-muted); margin-bottom: var(--space-md);">Our engineering team is always ready to share architectural perspectives.</p>
+          <a href="../contact-us/index.html" class="btn btn-primary">Speak to Our Architects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 [Company Name]. All rights reserved.</div>
+        <div style="display: flex; gap: var(--space-lg);">
+          <a href="../privacy-policy/index.html">Privacy Policy</a>
+          <a href="../terms-conditions/index.html">Terms & Conditions</a>
+          <a href="../sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
+

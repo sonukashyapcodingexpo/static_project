@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecting High-Throughput Event-Driven Microservices | [Company Name]</title>
+  <meta name="description" content="Technical guide on building resilient event-driven architectures using Apache Kafka, Go, and PostgreSQL.">
+
+  <link rel="stylesheet" href="../../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../../assets/css/variables.css">
+  <link rel="stylesheet" href="../../../assets/css/global.css">
+  <link rel="stylesheet" href="../../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../../assets/css/components.css">
+  <link rel="stylesheet" href="../../../assets/css/animations.css">
+  <link rel="stylesheet" href="../../../assets/css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../../index.html" class="site-logo">
+        <span>[Company Name]</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="../../../index.html" class="nav-link">Home</a>
+        <a href="../../../services/index.html" class="nav-link">Services</a>
+        <a href="../../../about-us/index.html" class="nav-link">About Us</a>
+        <a href="../../../portfolio/index.html" class="nav-link">Portfolio</a>
+        <a href="../../../case-studies/index.html" class="nav-link">Case Studies</a>
+        <a href="../../index.html" class="nav-link active">Blog</a>
+        <a href="../../../contact-us/index.html" class="nav-link">Contact</a>
+      </nav>
+
+      <a href="../../../request-a-quote/index.html" class="btn btn-primary hide-mobile">Request a Quote</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <article class="section">
+      <div class="container-narrow">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../index.html">Home</a>
+          <span class="breadcrumbs-separator">/</span>
+          <a href="../../index.html">Blog</a>
+          <span class="breadcrumbs-separator">/</span>
+          <span class="breadcrumbs-current">High-Throughput Microservices</span>
+        </nav>
+
+        <span class="eyebrow">Distributed Systems</span>
+        <h1 class="display-title" style="margin-top: var(--space-xs); margin-bottom: var(--space-md);">Architecting High-Throughput Event-Driven Microservices with Kafka and Go</h1>
+
+        <div class="d-flex align-center gap-md" style="margin-bottom: var(--space-2xl); border-bottom: 1px solid var(--color-rule); padding-bottom: var(--space-md);">
+          <div>
+            <div style="font-weight: var(--fw-bold); font-size: var(--text-body-sm);">Marcus Vance</div>
+            <div style="font-size: var(--text-eyebrow); color: var(--color-ink-muted);">Chief Technology Officer • 8 min read • November 2026</div>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-lg); line-height: 1.8; font-size: var(--text-body);">
+          <p class="lead">
+            When enterprise transaction volumes spike by an order of magnitude, synchronous request-response architectures frequently collapse under cascading database lock contention and thread pool exhaustion.
+          </p>
+
+          <p>
+            In this architectural overview, we examine how transitioning from direct REST-based service-to-service communication to asynchronous, append-only log streaming via Apache Kafka allows systems to absorb unpredictable traffic surges without latency degradation.
+          </p>
+
+          <h2>1. The Failure Mode of Synchronous Cascades</h2>
+          <p>
+            Consider a typical e-commerce or logistics transaction: an order submission triggers inventory reservation, payment processing, fraud scoring, and notification dispatch. In a naive synchronous architecture, the checkout endpoint holds an active HTTP connection while sequentially awaiting responses from four downstream systems.
+          </p>
+
+          <blockquote>
+            “If any single downstream dependency slows from 50ms to 2 seconds, the entire calling service's thread pool saturates within seconds, leading to catastrophic system-wide failure.”
+          </blockquote>
+
+          <h2>2. The Outbox Pattern for Guaranteed Consistency</h2>
+          <p>
+            To achieve reliable event publishing without distributed two-phase commit overhead, we implement the Transactional Outbox Pattern:
+          </p>
+
+          <pre style="background: var(--color-deep); color: #F5F4F0; padding: var(--space-lg); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: var(--text-body-sm); overflow-x: auto;">
+// Example Outbox SQL Transaction in Go
+tx, err := db.BeginTx(ctx, &sql.TxOptions{Isolation: sql.LevelReadCommitted})
+if err != nil {
+    return err
+}
+defer tx.Rollback()
+
+// 1. Write the business entity state
+_, err = tx.ExecContext(ctx, "INSERT INTO orders (id, amount, status) VALUES ($1, $2, $3)", orderID, amount, "PENDING")
+
+// 2. Write the event payload to outbox in the same atomic transaction
+_, err = tx.ExecContext(ctx, "INSERT INTO outbox_events (event_id, aggregate_type, payload) VALUES ($1, $2, $3)", eventID, "OrderCreated", payloadJSON)
+
+return tx.Commit()
+          </pre>
+
+          <h2>3. Idempotent Consumer Design</h2>
+          <p>
+            Because distributed brokers operate on at-least-once delivery semantics, downstream subscriber microservices must be inherently idempotent. Every event carries a unique UUID, validated against a consumer deduplication table before executing state mutations.
+          </p>
+
+          <h2>Summary & Next Steps</h2>
+          <p>
+            By decoupling producer ingestion from background consumer processing, systems retain sub-40ms response times for end users while absorbing millions of queued operations safely.
+          </p>
+        </div>
+
+        <!-- Author Card -->
+        <div class="card" style="margin-top: var(--space-3xl); background: var(--color-surface); padding: var(--space-xl);">
+          <div class="d-flex align-center gap-md">
+            <div>
+              <span class="badge badge-accent" style="margin-bottom: var(--space-2xs);">About the Author</span>
+              <h3 style="margin: 0; font-size: var(--text-h4);">Marcus Vance</h3>
+              <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted); margin-top: 4px;">
+                Marcus is Chief Technology Officer at [Company Name], specializing in distributed systems, high-frequency banking backends, and cloud infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-2xl); text-align: center;">
+          <a href="../../index.html" class="btn btn-secondary">← Return to All Articles</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>&copy; 2026 [Company Name]. All rights reserved.</div>
+        <div style="display: flex; gap: var(--space-lg);">
+          <a href="../../../privacy-policy/index.html">Privacy Policy</a>
+          <a href="../../../terms-conditions/index.html">Terms & Conditions</a>
+          <a href="../../../sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../../../assets/js/main.js"></script>
+</body>
+</html>
+

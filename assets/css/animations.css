@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Animations & Transitions
+   Restrained, Respectful of Reduced Motion & Progressive Enhancement
+   ========================================================================== */
+
+.fade-in {
+  animation: fadeIn var(--transition-smooth) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Visible by default: Ensures content & images are immediately visible
+   even when opened directly via file:// protocol without a local web server */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Only apply initial hiding when JavaScript scroll-observer is active */
+html.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+html.js-reveal .reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Accessible reduced motion override */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  html.js-reveal .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .fade-in {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <!-- Minimal geometric mark -->
+  <rect x="2" y="10" width="28" height="28" rx="6" fill="#191B1D"/>
+  <circle cx="16" cy="24" r="5" fill="#B85C3B"/>
+  <!-- Wordmark -->
+  <text x="38" y="29" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="18" fill="#191B1D" letter-spacing="-0.02em">[Company Name]</text>
+</svg>
+
