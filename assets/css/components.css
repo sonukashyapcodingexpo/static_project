@@ -430,7 +430,24 @@
   color: var(--color-ink);
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 10px;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.site-logo:hover {
+  opacity: 0.92;
+}
+
+.site-logo .logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-logo:hover .logo-mark {
+  transform: rotate(-6deg) scale(1.08);
 }
 
 .site-logo .logo-dot {

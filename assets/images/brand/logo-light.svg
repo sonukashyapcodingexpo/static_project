@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 36" fill="none">
+  <!-- Light variant for dark corporate footers and dark sections -->
+  <rect x="2" y="2" width="32" height="32" rx="8" fill="#F5F4F0"/>
+  <path d="M12 10V25H24" stroke="#191B1D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="23" cy="13" r="3" fill="#B85C3B"/>
+  <!-- Wordmark -->
+  <text x="44" y="25" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="21" fill="#F5F4F0" letter-spacing="-0.03em">Luminate</text>
+  <circle cx="148" cy="23" r="2.5" fill="#B85C3B"/>
+</svg>
