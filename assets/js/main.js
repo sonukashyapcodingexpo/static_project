@@ -1,7 +1,7 @@
 /**
  * Luminate — Corporate Engineering & Technology Architecture
- * Production Interactive System (Vanilla ES6+)
- * Zero external dependencies. 100% accessible and file:// compatible.
+ * Production Interactive & Kinetic Motion System (Vanilla ES6+)
+ * Zero external dependencies. Zero emojis. 100% accessible and file:// compatible.
  */
 
 (function () {
@@ -22,7 +22,7 @@
         menuToggle.setAttribute('aria-label', 'Toggle navigation menu');
         menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.innerHTML = `
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <svg class="icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -54,13 +54,13 @@
         // Update toggle icon
         if (nextState) {
           menuToggle.innerHTML = `
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <svg class="icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>`;
         } else {
           menuToggle.innerHTML = `
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <svg class="icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -171,9 +171,9 @@
             card.style.display = '';
             card.removeAttribute('hidden');
             card.style.opacity = '0';
-            card.style.transform = 'translateY(10px)';
+            card.style.transform = 'translateY(12px)';
             requestAnimationFrame(() => {
-              card.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+              card.style.transition = 'opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
               card.style.opacity = '1';
               card.style.transform = 'translateY(0)';
             });
@@ -239,7 +239,7 @@
           submitBtn.disabled = true;
           submitBtn.innerHTML = `
             <span style="display: inline-flex; align-items: center; gap: 8px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 0.8s linear infinite;">
+              <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 0.8s linear infinite;">
                 <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
                 <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
               </svg>
@@ -269,12 +269,19 @@
               font-weight: var(--fw-semibold);
               font-size: var(--text-body-sm);
               line-height: 1.5;
+              display: flex;
+              align-items: center;
+              gap: 8px;
             `;
             form.appendChild(success);
           }
-          success.innerHTML = '✓ Success! Your request has been logged. An engineering lead from Luminate will review your specification and reach out within 1 business day.';
+          success.innerHTML = `
+            <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Success! Your request has been logged. An engineering lead from Luminate will review your specification and reach out within 1 business day.`;
           form.reset();
-          showToast('✓ Enquiry received! We will reply within 1 business day.');
+          showToast('Enquiry received! We will reply within 1 business day.');
         }, 600);
       });
     });
@@ -292,7 +299,7 @@
     let estimateCard = document.querySelector('.quote-estimate-card');
     if (!estimateCard) {
       estimateCard = document.createElement('div');
-      estimateCard.className = 'quote-estimate-card';
+      estimateCard.className = 'quote-estimate-card motion-card';
       const submitBtn = quoteForm.querySelector('button[type="submit"]');
       if (submitBtn) {
         quoteForm.insertBefore(estimateCard, submitBtn);
@@ -357,7 +364,7 @@
     }
 
     typeRadios.forEach(r => r.addEventListener('change', updateEstimate));
-    if (budgetSelect) budgetSelect.addEventListener('change', updateEstimate));
+    if (budgetSelect) budgetSelect.addEventListener('change', updateEstimate);
     updateEstimate();
   }
 
@@ -374,7 +381,7 @@
     const wrapper = document.createElement('div');
     wrapper.className = 'live-search-wrapper';
     wrapper.innerHTML = `
-      <svg class="live-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg class="live-search-icon icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
@@ -422,7 +429,7 @@
       btn.className = 'back-to-top';
       btn.setAttribute('aria-label', 'Scroll back to top');
       btn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="18 15 12 9 6 15"></polyline>
         </svg>`;
       document.body.appendChild(btn);
@@ -452,24 +459,85 @@
     }, 4000);
   }
 
-  // --- 9. Progressive Scroll Reveal ---
-  function initScrollReveal() {
+  // --- 9. Kinetic Numerical Counter Animation ---
+  function initCountUpStats() {
+    const stats = document.querySelectorAll('.stat-number');
+    if (!stats.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    if (!('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          observer.unobserve(el);
+
+          const rawText = el.textContent.trim();
+          // Match numbers like 48, 99.98, 10, 82, 3.2
+          const match = rawText.match(/([<>]?\s*)([0-9]+(?:\.[0-9]+)?)(.*)/);
+          if (!match) return;
+
+          const prefix = match[1] || '';
+          const targetNum = parseFloat(match[2]);
+          const suffix = match[3] || '';
+          const isDecimal = match[2].includes('.');
+          const duration = 1200; // ms
+          const startTime = performance.now();
+
+          function step(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease-out cubic
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const currentNum = targetNum * easeProgress;
+
+            el.textContent = prefix + (isDecimal ? currentNum.toFixed(2) : Math.round(currentNum)) + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = rawText; // restore exact original
+            }
+          }
+          requestAnimationFrame(step);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    stats.forEach(s => observer.observe(s));
+  }
+
+  // --- 10. Progressive Kinetic Motion System ---
+  function initMotionSystem() {
     document.documentElement.classList.add('js-reveal');
-    const revealElements = document.querySelectorAll('.reveal');
+    const motionTargets = document.querySelectorAll('.reveal, .motion-div, .card, .portfolio-card, .process-step');
+
+    // Automatically apply staggered delay indices to sibling cards
+    document.querySelectorAll('.grid-3, .grid-2, .grid-4, .process-list').forEach(grid => {
+      const children = Array.from(grid.children);
+      children.forEach((child, index) => {
+        child.classList.add('motion-div');
+        const delay = (index % 4) * 100;
+        if (delay > 0) child.classList.add(`delay-${delay}`);
+      });
+    });
 
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add('is-in-view', 'is-revealed');
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.12 });
 
-      revealElements.forEach(el => observer.observe(el));
+      motionTargets.forEach(el => observer.observe(el));
     } else {
-      revealElements.forEach(el => el.classList.add('is-visible'));
+      motionTargets.forEach(el => el.classList.add('is-in-view', 'is-revealed'));
     }
   }
 
@@ -482,7 +550,8 @@
     initQuoteEstimator();
     initLiveSearch();
     initBackToTop();
-    initScrollReveal();
+    initMotionSystem();
+    initCountUpStats();
   }
 
   if (document.readyState === 'loading') {
@@ -500,6 +569,8 @@
     initQuoteEstimator,
     initLiveSearch,
     initBackToTop,
+    initMotionSystem,
+    initCountUpStats,
     showToast
   };
 })();
