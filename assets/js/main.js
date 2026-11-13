@@ -34,19 +34,20 @@
     }
 
     if (menuToggle && navMenu) {
-      // Ensure mobile CTA exists inside drawer
+      // Ensure mobile CTA exists inside drawer with exact relative URL from header
       if (!navMenu.querySelector('.mobile-nav-cta')) {
         const ctaBtn = document.createElement('a');
-        ctaBtn.href = navMenu.querySelector('a[href*="request-a-quote"]')?.href || 
-          (window.location.pathname.includes('/services/') || window.location.pathname.includes('/about-us/') ? '../request-a-quote/index.html' : './request-a-quote/index.html');
+        const headerQuoteHref = header.querySelector('a[href*="request-a-quote"]')?.getAttribute('href') || './request-a-quote/index.html';
+        ctaBtn.href = headerQuoteHref;
         ctaBtn.className = 'btn btn-primary mobile-nav-cta';
         ctaBtn.textContent = 'Request an Estimate';
         navMenu.appendChild(ctaBtn);
       }
 
-      const toggleMenu = (open) => {
-        const isOpen = open !== undefined ? open : navMenu.classList.contains('is-open');
-        const nextState = !isOpen;
+      const toggleMenu = (forceClose) => {
+        const isOpen = navMenu.classList.contains('is-open');
+        const nextState = forceClose === true ? false : !isOpen;
+
         menuToggle.setAttribute('aria-expanded', String(nextState));
         navMenu.classList.toggle('is-open', nextState);
         document.body.classList.toggle('menu-open', nextState);
@@ -69,11 +70,12 @@
       };
 
       menuToggle.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         toggleMenu();
       });
 
-      // Close menu when clicking any nav link
+      // Close menu when clicking any link inside drawer
       navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           if (navMenu.classList.contains('is-open')) toggleMenu(true);
