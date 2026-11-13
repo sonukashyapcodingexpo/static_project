@@ -541,6 +541,64 @@
     }
   }
 
+  // --- 11. Global Scroll Progress Indicator ---
+  function initScrollProgressBar() {
+    let bar = document.querySelector('.scroll-progress-bar');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.className = 'scroll-progress-bar';
+      document.body.appendChild(bar);
+    }
+
+    const updateBar = () => {
+      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollTotal <= 0) return;
+      const progress = (window.scrollY / scrollTotal) * 100;
+      bar.style.width = Math.min(Math.max(progress, 0), 100) + '%';
+    };
+
+    window.addEventListener('scroll', updateBar, { passive: true });
+    updateBar();
+  }
+
+  // --- 12. Interactive 3D Card Parallax on Hover ---
+  function init3DCardParallax() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const cards = document.querySelectorAll('.hero-visual-card, .featured-project, .motion-card');
+
+    cards.forEach(card => {
+      let isHovered = false;
+
+      card.addEventListener('mouseenter', () => {
+        isHovered = true;
+        card.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s ease';
+      });
+
+      card.addEventListener('mousemove', (e) => {
+        if (!isHovered) return;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Gentle tilt angles (max ±3.5 degrees)
+        const tiltX = ((y - centerY) / centerY) * -3.5;
+        const tiltY = ((x - centerX) / centerX) * 3.5;
+
+        card.style.transform = `perspective(1000px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateY(-6px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        isHovered = false;
+        card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease';
+        card.style.transform = '';
+      });
+    });
+  }
+
   // --- Initialization on Ready ---
   function initAll() {
     initNavigation();
@@ -552,6 +610,8 @@
     initBackToTop();
     initMotionSystem();
     initCountUpStats();
+    initScrollProgressBar();
+    init3DCardParallax();
   }
 
   if (document.readyState === 'loading') {

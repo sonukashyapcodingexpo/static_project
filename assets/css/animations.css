@@ -257,6 +257,155 @@ html.js-reveal .motion-div.is-in-view {
   transform: translateX(2px);
 }
 
+/* --- Global Scroll Progress Bar --- */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), #E29B7F, var(--color-teal), var(--color-accent));
+  background-size: 300% 100%;
+  animation: progressGradientFlow 4s linear infinite;
+  z-index: 9999;
+  transition: width 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+@keyframes progressGradientFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* --- Live Operations Radar Pulse Dot --- */
+.badge-live-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.badge-live-pulse::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 0 0 rgba(184, 92, 59, 0.7);
+  animation: radarPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(184, 92, 59, 0.8);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 7px rgba(184, 92, 59, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(184, 92, 59, 0);
+  }
+}
+
+/* --- Specular Card Shine Sweep on Hover --- */
+.card,
+.portfolio-card,
+.motion-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before,
+.portfolio-card::before,
+.motion-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(184, 92, 59, 0.08) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.card:hover::before,
+.portfolio-card:hover::before,
+.motion-card:hover::before {
+  opacity: 1;
+  animation: cardShineSweep 0.85s var(--ease-spring) forwards;
+}
+
+@keyframes cardShineSweep {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* --- Breadcrumbs & Inner Page Header Entrance --- */
+.breadcrumbs {
+  animation: breadcrumbsEntrance 0.5s var(--ease-spring) both;
+}
+
+@keyframes breadcrumbsEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section-header {
+  animation: sectionHeaderFade 0.6s var(--ease-spring) both;
+}
+
+@keyframes sectionHeaderFade {
+  from {
+    opacity: 0.2;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Kinetic Text Arrow --- */
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--duration-fast) var(--ease-spring), color var(--duration-fast) ease;
+}
+
+.btn-text::after {
+  content: "→";
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.btn-text:hover::after {
+  transform: translateX(5px);
+}
+
+
 /* --- Strict Accessibility & Reduced Motion Override --- */
 @media (prefers-reduced-motion: reduce) {
   *,

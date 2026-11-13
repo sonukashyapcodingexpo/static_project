@@ -6,14 +6,34 @@
 .hero-section {
   padding-top: clamp(4rem, 3rem + 4vw, 7.5rem);
   padding-bottom: clamp(3.5rem, 2.5rem + 3.5vw, 6rem);
-  background: linear-gradient(180deg, var(--color-canvas) 0%, #EFECE6 100%);
+  background: 
+    radial-gradient(ellipse 70% 60% at 85% 20%, rgba(184, 92, 59, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 50% at 10% 80%, rgba(28, 93, 107, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, var(--color-canvas) 0%, #ECEAE4 100%);
   border-bottom: 1px solid var(--color-rule);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(25, 27, 29, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.85;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  position: relative;
+  z-index: 2;
 }
 
 .hero-actions {
@@ -23,14 +43,27 @@
   margin-top: var(--space-sm);
 }
 
+.hero-visual {
+  position: relative;
+  z-index: 2;
+  perspective: 1200px;
+}
+
 .hero-visual-card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-rule);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
-  box-shadow: var(--shadow-elevated);
+  box-shadow: 0 24px 48px -12px rgba(25, 27, 29, 0.12), 0 8px 16px -4px rgba(25, 27, 29, 0.06);
   position: relative;
   overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.hero-visual-card:hover {
+  box-shadow: 0 32px 64px -16px rgba(184, 92, 59, 0.2), 0 12px 24px -4px rgba(25, 27, 29, 0.08);
+  border-color: rgba(184, 92, 59, 0.5);
 }
 
 .hero-visual-preview {
