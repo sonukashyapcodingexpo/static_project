@@ -54,6 +54,7 @@
 
 .btn-secondary:hover {
   background-color: var(--color-surface);
+  color: var(--color-ink);
   border-color: var(--color-ink);
 }
 
@@ -90,25 +91,36 @@
   font-size: var(--text-eyebrow);
 }
 
-/* Button variants inside dark sections */
-.section-deep .btn-primary {
+/* Button variants inside dark sections and CTA banners */
+.section-deep .btn-primary,
+.cta-banner .btn-primary {
   background-color: var(--color-surface);
-  color: var(--color-ink);
+  color: var(--color-ink) !important;
   border-color: var(--color-surface);
 }
 
-.section-deep .btn-primary:hover {
+.section-deep .btn-primary:hover,
+.cta-banner .btn-primary:hover {
   background-color: var(--color-canvas);
+  color: var(--color-ink) !important;
 }
 
-.section-deep .btn-secondary {
-  color: var(--color-deep-ink);
-  border-color: var(--color-deep-rule);
+.section-deep .btn-secondary,
+.cta-banner .btn-secondary {
+  color: #FFFFFF !important;
+  border-color: var(--color-deep-rule) !important;
+  background-color: transparent !important;
+  transition: all var(--transition-fast);
 }
 
-.section-deep .btn-secondary:hover {
-  border-color: var(--color-deep-ink);
-  background-color: rgba(255, 255, 255, 0.05);
+.section-deep .btn-secondary:hover,
+.section-deep .btn-secondary:focus-visible,
+.cta-banner .btn-secondary:hover,
+.cta-banner .btn-secondary:focus-visible {
+  border-color: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  color: var(--color-ink) !important;
+  transform: translateY(-1px);
 }
 
 /* --- Badges & Tags --- */
@@ -613,6 +625,49 @@
   color: var(--color-deep-muted);
   flex-wrap: wrap;
   gap: var(--space-md);
+}
+
+.site-footer .site-logo {
+  color: #FFFFFF !important;
+}
+
+.site-footer .site-logo .logo-dot {
+  background-color: var(--color-accent);
+}
+
+.site-footer a {
+  color: var(--color-deep-muted);
+  transition: color var(--transition-fast);
+}
+
+.site-footer a:hover {
+  color: #FFFFFF !important;
+}
+
+/* --- CTA Banner (Universal Global Component) --- */
+.cta-banner {
+  background-color: var(--color-deep) !important;
+  color: var(--color-deep-ink) !important;
+  border-radius: var(--radius-lg);
+  padding: clamp(2.5rem, 2rem + 3vw, 5rem);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-deep-rule);
+}
+
+.cta-banner h1,
+.cta-banner h2,
+.cta-banner h3 {
+  color: #FFFFFF !important;
+}
+
+.cta-banner p,
+.cta-banner .section-description {
+  color: var(--color-deep-muted) !important;
+}
+
+.cta-banner .eyebrow {
+  color: #E29B7F !important;
 }
 
 @media (max-width: 768px) {
