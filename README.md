@@ -1,4 +1,4 @@
-# \[Company Name\] --- Corporate Website
+# Luminate --- Corporate Website
 
 > **Production build specification, design system, asset-generation
 > brief and implementation guide**\
@@ -50,7 +50,7 @@
 # 1. Project overview
 
 Build a premium, responsive, multi-page corporate website for
-**\[Company Name\]**, a technology and digital solutions company serving
+**Luminate**, a technology and digital solutions company serving
 businesses across local and international markets.
 
 The website should communicate expertise in:
@@ -1452,11 +1452,11 @@ Example:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Website Development Services | [Company Name]</title>
+  <title>Website Development Services | Luminate</title>
 
   <meta
     name="description"
-    content="Explore professional website development services from [Company Name]."
+    content="Explore professional website development services from Luminate."
   >
 
   <link
@@ -1465,7 +1465,7 @@ Example:
   >
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Website Development | [Company Name]">
+  <meta property="og:title" content="Website Development | Luminate">
   <meta property="og:description" content="Professional website development solutions.">
   <meta property="og:image" content="https://www.example.com/assets/images/brand/og-image.jpg">
 </head>
