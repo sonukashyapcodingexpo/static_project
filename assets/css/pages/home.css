@@ -53,10 +53,10 @@
   background-color: var(--color-surface);
   border: 1px solid var(--color-rule);
   border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  padding: 0;
+  overflow: hidden;
   box-shadow: 0 24px 48px -12px rgba(25, 27, 29, 0.12), 0 8px 16px -4px rgba(25, 27, 29, 0.06);
   position: relative;
-  overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   transform-style: preserve-3d;
 }
@@ -66,21 +66,23 @@
   border-color: rgba(184, 92, 59, 0.5);
 }
 
-.hero-visual-preview {
+.hero-card-header {
+  padding: var(--space-xs) var(--space-md);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-rule);
   display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  background-color: var(--color-canvas);
-  border: 1px solid var(--color-rule-subtle);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  min-height: 42px;
 }
 
 .hero-terminal-bar {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: var(--space-xs);
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .terminal-dot {
@@ -88,11 +90,74 @@
   height: 10px;
   border-radius: var(--radius-full);
   background-color: var(--color-rule);
+  flex-shrink: 0;
 }
 
 .terminal-dot:nth-child(1) { background-color: #E57373; }
 .terminal-dot:nth-child(2) { background-color: #FFB74D; }
 .terminal-dot:nth-child(3) { background-color: #81C784; }
+
+.hero-terminal-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-eyebrow);
+  color: var(--color-ink-muted);
+  margin-left: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.hero-card-badge {
+  font-size: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.hero-card-image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-canvas);
+}
+
+.hero-card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-visual-card:hover .hero-card-image {
+  transform: scale(1.02);
+}
+
+.hero-card-footer {
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.hero-card-footer-title {
+  font-size: var(--text-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-ink);
+  line-height: 1.3;
+}
+
+.hero-card-footer-metrics {
+  font-family: var(--font-mono);
+  font-size: var(--text-eyebrow);
+  color: var(--color-ink-muted);
+  line-height: 1.3;
+}
 
 /* --- Trust / Proof Strip --- */
 .proof-strip {

@@ -72,23 +72,25 @@
           </div>
 
           <div class="hero-visual motion-div motion-fade-up delay-150">
-            <div class="hero-visual-card motion-card motion-float" style="padding: 0; overflow: hidden;">
-              <div style="padding: var(--space-xs) var(--space-md); background: var(--color-surface); border-bottom: 1px solid var(--color-rule); display: flex; align-items: center; justify-content: space-between;">
-                <div class="hero-terminal-bar" style="margin: 0;">
+            <div class="hero-visual-card motion-card motion-float">
+              <div class="hero-card-header">
+                <div class="hero-terminal-bar">
                   <span class="terminal-dot"></span>
                   <span class="terminal-dot"></span>
                   <span class="terminal-dot"></span>
-                  <span style="font-family: var(--font-mono); font-size: var(--text-eyebrow); color: var(--color-ink-muted); margin-left: 8px;">production.infrastructure.sys</span>
+                  <span class="hero-terminal-title">production.infrastructure.sys</span>
                 </div>
-                <span class="badge badge-accent badge-live-pulse" style="font-size: 10px;">Live Operations</span>
+                <span class="badge badge-accent badge-live-pulse hero-card-badge">Live Operations</span>
               </div>
-              <picture>
-  <source srcset="./assets/images/hero/homepage-technology-hero.webp" type="image/webp">
-  <img alt="Executive viewing panoramic enterprise system architecture and real-time operational dashboard" width="1200" height="800" fetchpriority="high" style="display: block; width: 100%; height: auto; object-fit: cover;" src="./assets/images/hero/homepage-technology-hero.jpg">
-</picture>
-              <div style="padding: var(--space-md); background: var(--color-surface); border-top: 1px solid var(--color-rule); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-xs);">
-                <div style="font-size: var(--text-body-sm); font-weight: var(--fw-semibold);">Enterprise Multi-Region Core</div>
-                <div style="font-family: var(--font-mono); font-size: var(--text-eyebrow); color: var(--color-ink-muted);">API v3.2 • 99.99% SLA • &lt; 38ms</div>
+              <div class="hero-card-image-wrap">
+                <picture>
+                  <source srcset="./assets/images/hero/homepage-technology-hero.webp" type="image/webp">
+                  <img alt="Executive viewing panoramic enterprise system architecture and real-time operational dashboard" width="1200" height="800" fetchpriority="high" class="hero-card-image" src="./assets/images/hero/homepage-technology-hero.jpg">
+                </picture>
+              </div>
+              <div class="hero-card-footer">
+                <div class="hero-card-footer-title">Enterprise Multi-Region Core</div>
+                <div class="hero-card-footer-metrics">API v3.2 • 99.99% SLA • &lt; 38ms</div>
               </div>
             </div>
           </div>

@@ -567,6 +567,9 @@
   function init3DCardParallax() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
+    // Disable on touch devices and mobile/tablet screens to prevent touch scroll jitter
+    if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+    if (window.innerWidth <= 1024) return;
 
     const cards = document.querySelectorAll('.hero-visual-card, .featured-project, .motion-card');
 
