@@ -34,6 +34,8 @@
     }
 
     if (menuToggle && navMenu) {
+      initMegaMenus(navMenu);
+
       // Ensure mobile CTA exists inside drawer with exact relative URL from header
       if (!navMenu.querySelector('.mobile-nav-cta')) {
         const ctaBtn = document.createElement('a');
@@ -110,6 +112,152 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     }
+  }
+
+  function pagePrefix() {
+    const script = document.querySelector('script[src*="assets/js/main.js"]');
+    if (!script) return './';
+    return script.getAttribute('src').replace(/assets\/js\/main\.js.*$/, '');
+  }
+
+  function initMegaMenus(navMenu) {
+    if (!navMenu || navMenu.dataset.mega === 'ready') return;
+    navMenu.dataset.mega = 'ready';
+    const prefix = pagePrefix();
+    const to = (path) => prefix + path;
+
+    const menus = [
+      {
+        match: 'services/index.html',
+        label: 'Services',
+        columns: [
+          {
+            kicker: 'Build',
+            items: [
+              ['Software development', 'Custom systems shaped around how the business runs.', 'software-development/index.html'],
+              ['Websites & web apps', 'Fast sites and applications your team can keep updating.', 'website-development/index.html'],
+              ['Mobile apps', 'Android and iOS products built for everyday use.', 'mobile-app-development/index.html'],
+              ['Product & SaaS', 'From a first version through a release you can stand behind.', 'saas-development/index.html']
+            ]
+          },
+          {
+            kicker: 'Grow',
+            items: [
+              ['AI solutions', 'Chatbots, voice agents, and practical automation.', 'ai-development/index.html'],
+              ['ERP, CRM & HR', 'Operations software for teams that have outgrown spreadsheets.', 'erp-development/index.html'],
+              ['Ecommerce', 'Stores and B2B portals that can take real order volume.', 'ecommerce-development/index.html'],
+              ['SEO & marketing', 'Search, paid media, and social that support the product.', 'seo-services/index.html']
+            ]
+          }
+        ],
+        all: ['All services', 'services/index.html']
+      },
+      {
+        match: 'about-us/index.html',
+        label: 'Company',
+        columns: [
+          {
+            kicker: 'Company',
+            items: [
+              ['About us', 'Who we are and how the studio works.', 'about-us/index.html'],
+              ['How we work', 'Discovery, build, launch, and the support after.', 'our-process/index.html'],
+              ['Our team', 'The people who design and ship the work.', 'our-team/index.html'],
+              ['Careers', 'Open roles on the team.', 'careers/index.html']
+            ]
+          },
+          {
+            kicker: 'Work',
+            items: [
+              ['Portfolio', 'Selected platforms and products.', 'portfolio/index.html'],
+              ['Case studies', 'What changed after the work shipped.', 'case-studies/index.html'],
+              ['Why Luminate', 'How we choose tools, dates, and support.', 'why-choose-us/index.html'],
+              ['FAQs', 'Straight answers before a project starts.', 'faqs/index.html']
+            ]
+          }
+        ]
+      }
+    ];
+
+    navMenu.querySelectorAll(':scope > a.nav-link').forEach((link) => {
+      const href = link.getAttribute('href') || '';
+      if (href.includes('portfolio/') || href.includes('case-studies/')) {
+        link.classList.add('nav-link-skip');
+      }
+    });
+
+    menus.forEach((menu) => {
+      const link = [...navMenu.querySelectorAll(':scope > a.nav-link')].find((a) => (a.getAttribute('href') || '').includes(menu.match));
+      if (!link) return;
+
+      const item = document.createElement('div');
+      item.className = 'nav-item';
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'nav-link nav-drop';
+      button.setAttribute('aria-expanded', 'false');
+      if (link.classList.contains('active')) {
+        button.classList.add('active');
+        item.classList.add('is-current');
+      }
+      button.innerHTML = menu.label + '<svg class="nav-caret" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+
+      const panel = document.createElement('div');
+      panel.className = 'nav-panel';
+      panel.hidden = true;
+      panel.innerHTML = menu.columns.map((column) => `
+        <div class="nav-col">
+          <p class="nav-kicker">${column.kicker}</p>
+          ${column.items.map(([title, text, path]) => `
+            <a class="nav-choice" href="${to(path)}">
+              <strong>${title}</strong>
+              <span>${text}</span>
+            </a>`).join('')}
+        </div>`).join('') + (menu.all ? `<a class="nav-panel-all" href="${to(menu.all[1])}">${menu.all[0]}</a>` : '');
+
+      item.append(button, panel);
+      link.replaceWith(item);
+    });
+
+    const closePanels = () => {
+      navMenu.querySelectorAll('.nav-item.is-open').forEach((item) => {
+        item.classList.remove('is-open');
+        const button = item.querySelector('.nav-drop');
+        const panel = item.querySelector('.nav-panel');
+        if (button) button.setAttribute('aria-expanded', 'false');
+        if (panel) panel.hidden = true;
+      });
+    };
+
+    navMenu.querySelectorAll('.nav-drop').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const item = button.closest('.nav-item');
+        const willOpen = !item.classList.contains('is-open');
+        closePanels();
+        if (willOpen) {
+          item.classList.add('is-open');
+          button.setAttribute('aria-expanded', 'true');
+          item.querySelector('.nav-panel').hidden = false;
+        }
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!navMenu.contains(event.target)) closePanels();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closePanels();
+    });
+
+    const here = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
+    navMenu.querySelectorAll('.nav-choice, .nav-panel-all').forEach((anchor) => {
+      const dest = new URL(anchor.getAttribute('href'), location.href).pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
+      if (dest && here.endsWith(dest)) {
+        anchor.classList.add('is-here');
+        anchor.closest('.nav-item')?.classList.add('is-current');
+      }
+    });
   }
 
   // --- 2. Accessible Accordions ---
@@ -604,8 +752,77 @@
     });
   }
 
+  function initPageStage() {
+    if (document.body.classList.contains('home')) return;
+    const main = document.querySelector('main');
+    if (!main || main.querySelector('.page-stage')) return;
+
+    const first = main.querySelector(':scope > section, :scope > article');
+    if (!first) return;
+    const title = first.querySelector('h1');
+    if (!title) return;
+
+    const stage = document.createElement('section');
+    stage.className = 'page-stage';
+    if (!title.id) title.id = 'page-title';
+    stage.setAttribute('aria-labelledby', title.id);
+    if (first.classList.contains('text-center')) stage.classList.add('is-center');
+
+    const split = title.closest('.split-7-5, .split-6-6, .split-5-7, .contact-layout');
+    const splitIsHero = split && first.contains(split) && !split.querySelector('.grid-3, .accordion, .portfolio-card');
+    const headerBlock = title.closest('.section-header');
+    const useNarrow = !splitIsHero && !!first.querySelector(':scope > .container-narrow');
+
+    const copy = document.createElement('div');
+    copy.className = (useNarrow ? 'container-narrow' : 'container') + ' page-stage-copy';
+
+    const crumbs = first.querySelector('.breadcrumbs');
+    if (crumbs) copy.appendChild(crumbs);
+
+    if (splitIsHero) {
+      stage.classList.add('page-stage-split');
+      copy.appendChild(split);
+    } else if (headerBlock && first.contains(headerBlock)) {
+      copy.appendChild(headerBlock);
+    } else {
+      const eyebrow = title.previousElementSibling;
+      let node = title.nextElementSibling;
+      if (eyebrow && eyebrow.classList.contains('eyebrow')) copy.appendChild(eyebrow);
+      copy.appendChild(title);
+      let guard = 0;
+      while (node && guard < 3) {
+        const next = node.nextElementSibling;
+        const text = (node.textContent || '').trim();
+        const shortPara = node.matches('p, .lead, .section-description') && text.length < 360;
+        const byline = node.classList.contains('d-flex') && text.length < 240 && !node.querySelector('form, img, h2, pre, .card');
+        const actions = node.matches('div') && node.querySelector(':scope > .btn, :scope > a.btn') && text.length < 180 && !node.querySelector('form, img, h2, pre');
+        if (shortPara || byline || actions) {
+          copy.appendChild(node);
+          guard += 1;
+          node = next;
+          continue;
+        }
+        break;
+      }
+    }
+
+    stage.appendChild(copy);
+    main.insertBefore(stage, first);
+
+    first.querySelectorAll('.section-header, .container, .container-narrow').forEach((el) => {
+      if (!el.querySelector('img, video, form, input, button, h1, h2, h3, p, li, pre, article, .card, .accordion')) {
+        el.remove();
+      }
+    });
+
+    const leftover = first.querySelector('img, video, form, input, button, h2, h3, p, li, pre, article, .card, .accordion, .grid, .grid-2, .grid-3');
+    if (!leftover) first.remove();
+    else first.classList.add('page-rest');
+  }
+
   // --- Initialization on Ready ---
   function initAll() {
+    initPageStage();
     initNavigation();
     initAccordions();
     initFilters();

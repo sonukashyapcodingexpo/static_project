@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luminate — Enterprise Software, AI & Digital Engineering</title>
-  <meta name="description" content="International digital consultancy delivering custom web applications, enterprise ERP, and scalable AI solutions.">
-    <link rel="icon" type="image/svg+xml" href="./assets/images/brand/favicon.svg">
+  <title>Luminate — Custom Software, Apps & IT Solutions</title>
+  <meta name="description" content="Luminate designs custom software, web and mobile applications, and startup products, then supports them after launch.">
+  <link rel="icon" type="image/svg+xml" href="./assets/images/brand/favicon.svg">
   <link rel="alternate icon" type="image/png" href="./assets/images/brand/favicon.png">
   <link rel="apple-touch-icon" href="./assets/images/brand/apple-touch-icon.png">
+  <link rel="preload" as="image" href="./assets/media/home/code-screens.jpg" fetchpriority="high">
 
-  <link rel="preload" as="image" href="./assets/images/hero/homepage-technology-hero.webp" type="image/webp" fetchpriority="high">
-  <!-- Core Design System -->
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/variables.css">
   <link rel="stylesheet" href="./assets/css/global.css">
@@ -18,15 +17,15 @@
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/animations.css">
   <link rel="stylesheet" href="./assets/css/responsive.css">
+  <link rel="stylesheet" href="./assets/css/pages/studio.css">
   <link rel="stylesheet" href="./assets/css/pages/home.css">
 </head>
-<body>
+<body class="home studio" data-hero="4">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Global Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="./index.html" class="site-logo" aria-label="Homepage">
+      <a href="./index.html" class="site-logo" aria-label="Luminate homepage">
         <span class="logo-mark"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#191B1D"/><path d="M10 8V23H22" stroke="#F5F4F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="11" r="3.5" fill="#B85C3B"/></svg></span>
         <span>Luminate</span>
         <span class="logo-dot"></span>
@@ -55,249 +54,302 @@
   </header>
 
   <main id="main-content">
-    <!-- 1. Hero Section -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="split-6-6">
-          <div class="hero-content motion-div motion-fade-up">
-            <span class="eyebrow">Enterprise Technology Consultancy</span>
-            <h1 class="display-title">Engineering Digital Systems with Precision.</h1>
-            <p class="lead">
-              We design and construct high-performance web applications, bespoke enterprise software, and secure AI infrastructure for organisations demanding stability and scale.
-            </p>
-            <div class="hero-actions">
-              <a href="./request-a-quote/index.html" class="btn btn-accent btn-lg">Start a Project</a>
-              <a href="./services/index.html" class="btn btn-secondary btn-lg">Explore Services</a>
-            </div>
-          </div>
-
-          <div class="hero-visual motion-div motion-fade-up delay-150">
-            <div class="hero-visual-card motion-card motion-float">
-              <div class="hero-card-header">
-                <div class="hero-terminal-bar">
-                  <span class="terminal-dot"></span>
-                  <span class="terminal-dot"></span>
-                  <span class="terminal-dot"></span>
-                  <span class="hero-terminal-title">production.infrastructure.sys</span>
-                </div>
-                <span class="badge badge-accent badge-live-pulse hero-card-badge">Live Operations</span>
-              </div>
-              <div class="hero-card-image-wrap">
-                <picture>
-                  <source srcset="./assets/images/hero/homepage-technology-hero.webp" type="image/webp">
-                  <img alt="Executive viewing panoramic enterprise system architecture and real-time operational dashboard" width="1200" height="800" fetchpriority="high" class="hero-card-image" src="./assets/images/hero/homepage-technology-hero.jpg">
-                </picture>
-              </div>
-              <div class="hero-card-footer">
-                <div class="hero-card-footer-title">Enterprise Multi-Region Core</div>
-                <div class="hero-card-footer-metrics">API v3.2 • 99.99% SLA • &lt; 38ms</div>
-              </div>
-            </div>
-          </div>
+    <section class="film" aria-labelledby="hero-title">
+      <div class="film-stage">
+        <video autoplay muted loop playsinline poster="./assets/media/home/code-screens.jpg" aria-hidden="true">
+          <source src="./assets/media/home/hero-coding.mp4" type="video/mp4">
+        </video>
+        <div class="film-scrim"></div>
+      </div>
+      <div class="container film-copy">
+        <p class="film-kicker"><i aria-hidden="true"></i> Luminate IT Solutions</p>
+        <h1 id="hero-title" class="film-title">Build software your business can <em>grow</em> on.</h1>
+        <p class="film-lead">Custom software, mobile apps, and digital products for companies that want a clear build, a steady launch, and support after go-live.</p>
+        <div class="film-actions">
+          <a href="./request-a-quote/index.html" class="btn btn-accent btn-lg">Start a project</a>
+          <a href="./services/index.html" class="btn btn-secondary btn-lg">Explore services</a>
+        </div>
+        <div class="film-contact">
+          <a href="tel:+8898006802">+88 (9800) 6802</a>
+          <a href="mailto:hrd@luminabusinesssolutions.com">hrd@luminabusinesssolutions.com</a>
         </div>
       </div>
     </section>
 
-    <!-- 2. Proof Strip -->
-    <div class="proof-strip">
-      <div class="container">
-        <div class="proof-inner">
-          <span class="proof-label">Core Competencies</span>
-          <div class="proof-items">
-            <span class="proof-badge motion-shimmer"><svg class="icon-svg icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> High-Scale Cloud Architecture</span>
-            <span class="proof-badge motion-shimmer"><svg class="icon-svg icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom AI Workflow Automation</span>
-            <span class="proof-badge motion-shimmer"><svg class="icon-svg icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-Region Enterprise ERP</span>
-            <span class="proof-badge motion-shimmer"><svg class="icon-svg icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> WCAG 2.2 AA Accessibility</span>
-          </div>
+    <section class="metric-band" aria-label="Company snapshot">
+      <div class="container metric-grid">
+        <div class="metric">
+          <b>330<span>+</span></b>
+          <p>Active clients</p>
         </div>
+        <div class="metric">
+          <b>920<span>+</span></b>
+          <p>Projects delivered</p>
+        </div>
+        <div class="metric">
+          <b>20<span>+</span></b>
+          <p>Years in practice</p>
+        </div>
+        <div class="metric">
+          <b>112<span>+</span></b>
+          <p>Specialists on the team</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="reel" aria-label="Industries we work with">
+      <p class="sr-only">Healthcare, logistics, education, retail, finance, real estate, hospitality, and startups.</p>
+      <div class="reel-track">
+        <span>Healthcare</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Logistics</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Education</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Retail</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Finance</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Real estate</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Hospitality</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Startups</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Healthcare</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Logistics</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Education</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Retail</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Finance</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Real estate</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Hospitality</span><i class="reel-dot" aria-hidden="true"></i>
+        <span>Startups</span><i class="reel-dot" aria-hidden="true"></i>
       </div>
     </div>
 
-    <!-- 3. Core Services -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Solutions Portfolio</span>
-          <h2>Disciplined Engineering for Critical Operations</h2>
-          <p class="section-description">
-            Each solution is architected from the foundation up to align with your organization’s security posture and long-term roadmap.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card service-card motion-div motion-card reveal" style="padding: 0; overflow: hidden;">
-            <picture>
-  <source srcset="./assets/images/services/website-development-service.webp" type="image/webp">
-  <img alt="Web application development architecture" width="600" height="400" style="width: 100%; height: 190px; object-fit: cover; display: block;" loading="lazy" src="./assets/images/services/website-development-service.jpg">
-</picture>
-            <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex-grow: 1;">
-              <span class="service-num">01 // WEB & APP PLATFORMS</span>
-              <h3 class="service-title">Web Application Development</h3>
-              <p class="service-desc">Robust web platforms engineered with semantic code, lightning-fast rendering, and custom REST & GraphQL integrations.</p>
-              <a href="./web-application-development/index.html" class="btn-text">View capabilities</a>
-            </div>
-          </div>
-
-          <div class="card service-card motion-div motion-card reveal delay-100" style="padding: 0; overflow: hidden;">
-            <picture>
-  <source srcset="./assets/images/services/ai-development.webp" type="image/webp">
-  <img alt="AI and SaaS development architecture" width="600" height="400" style="width: 100%; height: 190px; object-fit: cover; display: block;" loading="lazy" src="./assets/images/services/ai-development.jpg">
-</picture>
-            <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex-grow: 1;">
-              <span class="service-num">02 // ARTIFICIAL INTELLIGENCE</span>
-              <h3 class="service-title">AI & SaaS Development</h3>
-              <p class="service-desc">Practical machine learning integrations, autonomous customer voice agents, and multi-tenant SaaS application backbones.</p>
-              <a href="./ai-development/index.html" class="btn-text">View capabilities</a>
-            </div>
-          </div>
-
-          <div class="card service-card motion-div motion-card reveal delay-200" style="padding: 0; overflow: hidden;">
-            <picture>
-  <source srcset="./assets/images/services/erp-crm-development.webp" type="image/webp">
-  <img alt="Enterprise ERP software architecture" width="600" height="400" style="width: 100%; height: 190px; object-fit: cover; display: block;" loading="lazy" src="./assets/images/services/erp-crm-development.jpg">
-</picture>
-            <div style="padding: var(--space-xl); display: flex; flex-direction: column; flex-grow: 1;">
-              <span class="service-num">03 // ENTERPRISE SOFTWARE</span>
-              <h3 class="service-title">Enterprise ERP & Portals</h3>
-              <p class="service-desc">Consolidated enterprise resource planning, supply chain coordination, billing, and custom B2B supplier portals.</p>
-              <a href="./erp-development/index.html" class="btn-text">View capabilities</a>
-            </div>
-          </div>
+    <section class="block" id="about">
+      <div class="container story-grid">
+        <figure class="story-photo">
+          <img src="./assets/media/home/team-desks.jpg" alt="Developers working side by side at their computers" width="1600" height="1066">
+          <figcaption class="story-note">
+            <strong>Built with your team</strong>
+            <span>Discovery through support, with the same people.</span>
+          </figcaption>
+        </figure>
+        <div class="story-copy">
+          <span class="eyebrow">About Luminate</span>
+          <h2>A technology partner for the long run.</h2>
+          <p class="lead">We design secure applications around a specific business, then stay close enough to support them. The work covers custom software, web and mobile products, and systems that can grow as the company does.</p>
+          <ul class="check-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Custom software development
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Web and mobile applications
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Dedicated technical support
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Systems ready to scale
+            </li>
+          </ul>
+          <a href="./about-us/index.html" class="btn-text story-link">More about the company</a>
         </div>
       </div>
     </section>
 
-    <!-- 4. Featured Case Study -->
-    <section id="case-studies" class="section section-surface">
+    <section class="block offer" id="services">
       <div class="container">
-        <div class="section-header motion-div motion-fade-up">
-          <span class="eyebrow">Proven Outcomes</span>
-          <h2>Featured Case Study</h2>
-          <p class="section-description">How we modernized global logistics coordination for an international distribution partner.</p>
+        <div class="intro-row">
+          <div>
+            <span class="eyebrow">What we offer</span>
+            <h2>Solutions that move a business forward.</h2>
+          </div>
+          <p>Four places teams usually start. Each one is scoped to the operation in front of us, from the first conversation through release.</p>
         </div>
 
-        <div class="featured-project motion-div motion-card reveal">
-          <div class="project-details">
-            <div>
-              <span class="badge badge-accent">Supply Chain & Logistics</span>
-              <h3 style="margin-top: var(--space-sm); margin-bottom: var(--space-md);">Enterprise Multi-Region Inventory Hub</h3>
-              <p>Replaced disjointed legacy spreadsheets and localized databases with a unified, real-time inventory management platform across 14 global fulfillment nodes.</p>
-              
-              <div style="margin-top: var(--space-lg); display: flex; gap: var(--space-xl);">
-                <div class="stat-item">
-                  <div class="stat-number">48%</div>
-                  <div class="stat-label">Reduction in order fulfillment cycle</div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-number">99.98%</div>
-                  <div class="stat-label">Stock allocation accuracy</div>
-                </div>
+        <div class="mosaic">
+          <a class="tile tile-feature" href="./software-development/index.html">
+            <img src="./assets/media/home/code-screens.jpg" alt="" width="1600" height="1067">
+            <div class="tile-body">
+              <span class="tile-kicker">01 — Software</span>
+              <h3>Software development</h3>
+              <p>Custom systems that take repetitive work off the team and give the business a clearer way to operate.</p>
+              <span class="tile-go">View service</span>
+            </div>
+          </a>
+
+          <a class="tile" href="./mobile-app-development/index.html">
+            <img src="./assets/media/home/mobile-use.jpg" alt="" width="1400" height="933">
+            <div class="tile-body">
+              <span class="tile-kicker">02 — Mobile</span>
+              <h3>Mobile apps</h3>
+              <p>Android and iOS products built for speed, security, and everyday use.</p>
+              <span class="tile-go">View service</span>
+            </div>
+          </a>
+
+          <a class="tile" href="./software-product-development/index.html">
+            <img src="./assets/media/home/product-desk.jpg" alt="" width="1400" height="933">
+            <div class="tile-body">
+              <span class="tile-kicker">03 — Product</span>
+              <h3>Product development</h3>
+              <p>From a working first version through a release you can stand behind.</p>
+              <span class="tile-go">View service</span>
+            </div>
+          </a>
+
+          <a class="tile tile-wide" href="./saas-development/index.html">
+            <img src="./assets/media/home/startup-team.jpg" alt="" width="1600" height="1066">
+            <div class="tile-body">
+              <span class="tile-kicker">04 — Startups</span>
+              <h3>Startup software</h3>
+              <p>Practical, scalable products for teams that need to ship while the company is still taking shape.</p>
+              <span class="tile-go">View service</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block method" id="process">
+      <div class="container method-grid">
+        <div class="method-visual">
+          <video autoplay muted loop playsinline poster="./assets/media/home/meeting.jpg" preload="metadata" aria-hidden="true">
+            <source src="./assets/media/home/studio-team.mp4" type="video/mp4">
+          </video>
+          <span class="method-badge"><i aria-hidden="true"></i> Studio</span>
+        </div>
+        <div class="method-copy">
+          <span class="eyebrow">How we work</span>
+          <h2>A short path from the brief to launch.</h2>
+          <p>Four stages, kept visible, so the project stays understandable from the first call to the week after release.</p>
+          <ol class="steps">
+            <li class="step">
+              <b>01</b>
+              <div>
+                <h3>Discovery</h3>
+                <p>We learn the goal, the audience, and the constraints before anyone picks a stack.</p>
               </div>
-            </div>
-
-            <div style="margin-top: var(--space-xl);">
-              <a href="./case-studies/index.html" class="btn btn-secondary">Read Full Case Study</a>
-            </div>
-          </div>
-
-          <div class="project-preview" style="padding: 0; overflow: hidden; background: var(--color-canvas);">
-            <picture>
-  <source srcset="./assets/images/services/inventory-logistics-software.webp" type="image/webp">
-  <img alt="Enterprise multi-region inventory hub dashboard preview" width="800" height="600" style="width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block;" loading="lazy" src="./assets/images/services/inventory-logistics-software.jpg">
-</picture>
-          </div>
+            </li>
+            <li class="step">
+              <b>02</b>
+              <div>
+                <h3>Strategy</h3>
+                <p>A practical roadmap: what gets built, in what order, and how you will know it worked.</p>
+              </div>
+            </li>
+            <li class="step">
+              <b>03</b>
+              <div>
+                <h3>Development</h3>
+                <p>Secure, reviewed builds you can see as they come together.</p>
+              </div>
+            </li>
+            <li class="step">
+              <b>04</b>
+              <div>
+                <h3>Launch</h3>
+                <p>Testing, release, and support that continues after the site or product is live.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <!-- 5. Process Sequence -->
-    <section id="process" class="section section-deep">
+    <section class="block" id="why">
       <div class="container">
-        <div class="section-header motion-div motion-fade-up">
-          <span class="eyebrow" style="color: #E29B7F;">Our Methodology</span>
-          <h2>How We Build</h2>
-          <p class="section-description">A systematic four-stage framework eliminating ambiguity and guaranteeing production stability.</p>
+        <div class="intro-row">
+          <div>
+            <span class="eyebrow">Why Luminate</span>
+            <h2>Work you can plan a business around.</h2>
+          </div>
+          <p>The same standards on a first website and on a product that already has customers.</p>
         </div>
-
-        <div class="process-list">
-          <div class="process-step motion-div motion-card">
-            <h4>01. Discovery & Spec</h4>
-            <p>Defining architectural boundaries, technology constraints, and core business metrics before writing a line of code.</p>
-          </div>
-          <div class="process-step motion-div motion-card">
-            <h4>02. Modular Build</h4>
-            <p>Iterative engineering sprints featuring automated linting, test coverage, and continuous client preview builds.</p>
-          </div>
-          <div class="process-step motion-div motion-card">
-            <h4>03. Rigorous Audit</h4>
-            <p>Full-spectrum performance profiling, cross-browser validation, and WCAG 2.2 AA accessibility verification.</p>
-          </div>
-          <div class="process-step motion-div motion-card">
-            <h4>04. Cutover & Support</h4>
-            <p>DNS propagation, zero-downtime static deployment, real-time telemetry, and continuous SLA support.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. FAQs Preview -->
-    <section id="faqs" class="section">
-      <div class="container-narrow">
-        <div class="section-header text-center">
-          <span class="eyebrow">Clarity & Trust</span>
-          <h2>Frequently Asked Questions</h2>
-          <p class="section-description">Answers to key architectural and operational queries.</p>
-        </div>
-
-        <div class="accordion" data-exclusive="true">
-          <div class="accordion-item" open>
-            <button class="accordion-trigger" aria-expanded="true">
-              <span>What technical stack is used for your web implementations?</span>
-              <span class="accordion-icon" aria-hidden="true"></span>
-            </button>
-            <div class="accordion-content">
-              We leverage semantic HTML5, modern CSS3 custom properties, and vanilla modular JavaScript. This ensures high speed, maximum security, zero runtime overhead, and optimal Core Web Vitals.
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="false">
-              <span>Can these static interfaces integrate with our existing backend or ERP?</span>
-              <span class="accordion-icon" aria-hidden="true"></span>
-            </button>
-            <div class="accordion-content">
-              Absolutely. Our architectures interface effortlessly with RESTful services, GraphQL gateways, enterprise webhooks, and third-party authentication providers.
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="false">
-              <span>How do you handle multi-country deployments and localization?</span>
-              <span class="accordion-icon" aria-hidden="true"></span>
-            </button>
-            <div class="accordion-content">
-              We engineer dedicated, localized landing hubs with custom currency considerations, regional contact channels, and localized compliance notices rather than simple cloned pages.
-            </div>
-          </div>
+        <div class="reasons">
+          <article class="reason">
+            <span>01</span>
+            <h3>Custom IT solutions</h3>
+            <p>Software, websites, and tools shaped around the way your operation already runs.</p>
+          </article>
+          <article class="reason">
+            <span>02</span>
+            <h3>A practiced team</h3>
+            <p>Developers, designers, and specialists who have shipped this kind of work before.</p>
+          </article>
+          <article class="reason">
+            <span>03</span>
+            <h3>Aimed at growth</h3>
+            <p>Technology chosen because it saves time or opens a result you can measure.</p>
+          </article>
+          <article class="reason">
+            <span>04</span>
+            <h3>Current tools</h3>
+            <p>Modern frameworks and secure systems, picked for the job rather than for fashion.</p>
+          </article>
+          <article class="reason">
+            <span>05</span>
+            <h3>Support when you need it</h3>
+            <p>Maintenance and a person to call after the launch date has passed.</p>
+          </article>
+          <article class="reason">
+            <span>06</span>
+            <h3>Dates you can use</h3>
+            <p>A visible workflow, with delivery planned in the open and kept in scope.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 7. Closing CTA Banner -->
-    <section id="contact" class="section">
+    <section class="block block-follow" id="clients">
       <div class="container">
-        <div class="cta-banner" style="background-color: var(--color-deep); color: var(--color-deep-ink);">
-          <div class="split-7-5">
+        <div class="intro-row quotes-intro">
+          <div>
+            <span class="eyebrow">Clients</span>
+            <h2>Notes from teams we have built with.</h2>
+          </div>
+          <p>A few words from people who have taken a project from brief to release with us.</p>
+        </div>
+        <div class="quotes-layout">
+          <figure class="quote-main">
             <div>
-              <span class="eyebrow" style="color: #E29B7F;">Start the Conversation</span>
-              <h2 style="color: #FFFFFF; margin-bottom: var(--space-md);">Ready to engineer your next digital solution?</h2>
-              <p style="color: var(--color-deep-muted); max-width: 54ch;">
-                Speak directly with a solutions architect to discuss specifications, timelines, and tailored commercial terms.
-              </p>
+              <div class="quote-mark" aria-hidden="true">“</div>
+              <blockquote>Working with Luminate IT Solutions was a great experience. Their team understood our requirements and delivered a high-quality solution that exceeded our expectations. The communication, support, and technical expertise were outstanding.</blockquote>
             </div>
-            <div style="display: flex; gap: var(--space-md); justify-content: flex-start; align-items: center; flex-wrap: wrap;">
-              <a href="mailto:contact@luminate.tech" class="btn btn-accent btn-lg">Request Consultation</a>
-              <a href="./design-system.html" class="btn btn-secondary btn-lg">View Design System</a>
+            <figcaption class="quote-person">
+              <strong>Amit Sharma</strong>
+              <span>Director, TechNova Solutions</span>
+            </figcaption>
+          </figure>
+          <div class="quote-side">
+            <figure class="quote-card">
+              <blockquote>Professional team with excellent support and timely delivery.</blockquote>
+              <figcaption class="quote-person">
+                <strong>Priya Mehta</strong>
+                <span>Client</span>
+              </figcaption>
+            </figure>
+            <figure class="quote-card">
+              <blockquote>Reliable, innovative, and highly recommended for IT services.</blockquote>
+              <figcaption class="quote-person">
+                <strong>Rahul Verma</strong>
+                <span>Client</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale-wrap" aria-labelledby="finale-title">
+      <div class="container">
+        <div class="finale">
+          <img src="./assets/media/home/office.jpg" alt="" width="1800" height="1200">
+          <div class="finale-card">
+            <span class="eyebrow">Start a conversation</span>
+            <h2 id="finale-title">Tell us what you want to build.</h2>
+            <p>Call or write. We will talk through the work, the timing, and a sensible way to begin.</p>
+            <div class="finale-actions">
+              <a href="./request-a-quote/index.html" class="btn btn-accent btn-lg">Request a quote</a>
+              <a href="tel:+8898006802" class="btn btn-secondary btn-lg">Call the team</a>
             </div>
           </div>
         </div>
@@ -305,39 +357,42 @@
     </section>
   </main>
 
-  <!-- Global Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
         <div>
-          <div class="site-logo" style="color: #FFFFFF; margin-bottom: var(--space-sm);">
+          <a href="./index.html" class="site-logo" style="color: #FFFFFF; margin-bottom: var(--space-sm);">
             <span>Luminate</span>
             <span class="logo-dot"></span>
-          </div>
-          <p style="color: var(--color-deep-muted); max-width: 32ch;">
-            Bespoke software architecture, intelligent enterprise systems, and high-performance digital solutions.
+          </a>
+          <p style="color: var(--color-deep-muted); max-width: 34ch;">
+            Custom software, mobile products, and IT support for businesses that want technology they can grow on.
+          </p>
+          <p style="margin-top: 1rem;">
+            <a href="tel:+8898006802">+88 (9800) 6802</a><br>
+            <a href="mailto:hrd@luminabusinesssolutions.com">hrd@luminabusinesssolutions.com</a>
           </p>
         </div>
         <div>
-          <h4 class="footer-heading">Services</h4>
+          <h2 class="footer-heading">Services</h2>
           <ul class="footer-links">
-            <li><a href="./services/index.html">Web Applications</a></li>
-            <li><a href="./services/index.html">AI & SaaS Development</a></li>
-            <li><a href="./services/index.html">Enterprise ERP</a></li>
-            <li><a href="./services/index.html">All Services Hub</a></li>
+            <li><a href="./software-development/index.html">Software Development</a></li>
+            <li><a href="./mobile-app-development/index.html">Mobile Apps</a></li>
+            <li><a href="./website-development/index.html">Web Development</a></li>
+            <li><a href="./services/index.html">All Services</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="footer-heading">Company</h4>
+          <h2 class="footer-heading">Company</h2>
           <ul class="footer-links">
             <li><a href="./about-us/index.html">About Us</a></li>
-            <li><a href="./locations/index.html">Global Locations</a></li>
+            <li><a href="./locations/index.html">Locations</a></li>
             <li><a href="./our-team/index.html">Our Team</a></li>
             <li><a href="./careers/index.html">Careers</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="footer-heading">Resources</h4>
+          <h2 class="footer-heading">Resources</h2>
           <ul class="footer-links">
             <li><a href="./portfolio/index.html">Portfolio</a></li>
             <li><a href="./case-studies/index.html">Case Studies</a></li>
@@ -348,13 +403,13 @@
       </div>
       <div class="footer-bottom">
         <div>&copy; 2026 Luminate. All rights reserved.</div>
-        <div style="display: flex; gap: var(--space-lg);">
+        <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap;">
           <a href="./privacy-policy/index.html">Privacy Policy</a>
-          <a href="./terms-conditions/index.html">Terms & Conditions</a>
+          <a href="./terms-conditions/index.html">Terms &amp; Conditions</a>
           <a href="./sitemap.html">Sitemap</a>
-          <a href="./design-system.html">Design System Spec</a>
         </div>
       </div>
+      <p class="media-note">Photography and video are from Pexels and are free to use, including for commercial projects.</p>
     </div>
   </footer>
 
