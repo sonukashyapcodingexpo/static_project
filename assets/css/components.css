@@ -326,6 +326,8 @@
 /* --- Form Controls --- */
 .form-group {
   margin-bottom: var(--space-lg);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .form-label {
@@ -344,7 +346,10 @@
 .form-input,
 .form-select,
 .form-textarea {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.75rem 1rem;
   background-color: var(--color-surface);
   border: 1px solid var(--color-rule);
@@ -352,6 +357,10 @@
   color: var(--color-ink);
   font-size: var(--text-body);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-textarea {
+  resize: vertical;
 }
 
 .form-input:focus,
