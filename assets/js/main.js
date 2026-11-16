@@ -148,6 +148,17 @@
               ['Ecommerce', 'Stores and B2B portals that can take real order volume.', 'ecommerce-development/index.html'],
               ['SEO & marketing', 'Search, paid media, and social that support the product.', 'seo-services/index.html']
             ]
+          },
+          {
+            kicker: 'Revenue cycle',
+            items: [
+              ['Medical coding & billing', 'ICD-10, CPT, and HCPCS from the chart, then a scrubbed claim.', 'medical-coding-billing/index.html'],
+              ['AR calling', 'Payer and patient calls with a next date on every account.', 'ar-calling/index.html'],
+              ['Denial management', 'Appeals grouped by reason, with the chart attached.', 'denial-management/index.html'],
+              ['Payment posting', 'ERA and paper payments, with short pays kept visible.', 'payment-posting/index.html'],
+              ['Eligibility verification', 'Coverage, copay, and authorization checked before the visit.', 'eligibility-verification/index.html'],
+              ['Charge entry', 'Encounter forms turned into charges, with thin notes held.', 'charge-entry/index.html']
+            ]
           }
         ],
         all: ['All services', 'services/index.html']
@@ -168,8 +179,6 @@
           {
             kicker: 'Work',
             items: [
-              ['Portfolio', 'Selected platforms and products.', 'portfolio/index.html'],
-              ['Case studies', 'What changed after the work shipped.', 'case-studies/index.html'],
               ['Why Luminate', 'How we choose tools, dates, and support.', 'why-choose-us/index.html'],
               ['FAQs', 'Straight answers before a project starts.', 'faqs/index.html']
             ]
@@ -218,7 +227,7 @@
       button.innerHTML = menu.label + '<svg class="nav-caret" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
 
       const panel = document.createElement('div');
-      panel.className = 'nav-panel';
+      panel.className = 'nav-panel' + (menu.columns.length > 2 ? ' nav-panel-wide' : '');
       panel.hidden = true;
       panel.innerHTML = menu.columns.map((column) => `
         <div class="nav-col">

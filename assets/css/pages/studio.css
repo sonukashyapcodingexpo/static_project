@@ -566,6 +566,11 @@ body.studio:not(.home) .filter-btn[aria-pressed="true"] {
   gap: 0.35rem 1.75rem;
 }
 
+.nav-item.is-open .nav-panel.nav-panel-wide {
+  width: min(980px, calc(100vw - 2rem));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .nav-kicker {
   margin: 0 0 0.45rem;
   font-family: var(--font-heading);
@@ -663,7 +668,9 @@ body.studio:not(.home) .filter-btn[aria-pressed="true"] {
     max-width: 100%;
   }
 
-  .nav-item.is-open .nav-panel {
+  .nav-item.is-open .nav-panel,
+  .nav-item.is-open .nav-panel.nav-panel-wide {
+    width: 100%;
     grid-template-columns: 1fr;
   }
 }
