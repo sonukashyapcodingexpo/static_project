@@ -228,6 +228,13 @@
   object-position: center center;
 }
 
+@media (min-width: 900px) {
+  .film-stage video {
+    transform: translate3d(7%, 0, 0) scale(1.14);
+    transform-origin: center center;
+  }
+}
+
 .film-scrim,
 .method-visual::after,
 .tile::after,
@@ -289,6 +296,7 @@
 .metric b {
   display: block;
   font-family: var(--font-heading);
+  font-variant-numeric: tabular-nums;
   font-size: clamp(2.15rem, 1.6rem + 1.8vw, 3.35rem);
   font-weight: var(--fw-bold);
   letter-spacing: -0.045em;
@@ -460,8 +468,21 @@
   grid-column: 1 / -1;
 }
 
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: rgba(8, 8, 10, 0.34);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 22%, #000 62%);
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 22%, #000 62%);
+}
+
 .tile::after {
-  background: linear-gradient(180deg, rgba(10, 12, 14, 0.05) 10%, rgba(10, 12, 14, 0.82) 100%);
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.08) 0%, rgba(8, 8, 10, 0.22) 40%, rgba(8, 8, 10, 0.58) 100%);
   z-index: 1;
 }
 
@@ -474,38 +495,52 @@
 .tile-body {
   position: relative;
   z-index: 2;
-  padding: 1.35rem 1.4rem 1.25rem;
+  width: 100%;
+  margin: 0;
+  padding: 1.45rem 1.4rem 1.25rem;
+  background: none;
+  box-shadow: none;
+}
+
+.tile,
+.tile:hover,
+.tile:focus,
+.tile h3,
+.tile p,
+.tile-go {
+  color: #ffffff !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45);
 }
 
 .tile-kicker {
   display: block;
   margin-bottom: 0.35rem;
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: var(--fw-bold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
+  color: #ffc7a8 !important;
 }
 
 .tile h3 {
-  color: #fff;
-  font-size: clamp(1.35rem, 1.15rem + 0.6vw, 1.85rem);
+  font-size: clamp(1.4rem, 1.2rem + 0.6vw, 1.9rem);
+  font-weight: 700;
   letter-spacing: -0.03em;
 }
 
 .tile p {
   margin-top: 0.35rem;
-  max-width: 36ch;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 0.95rem;
+  max-width: 38ch;
+  font-size: 1rem;
+  line-height: 1.45;
 }
 
 .tile-go {
   display: inline-flex;
   margin-top: 0.8rem;
   font-family: var(--font-heading);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: var(--fw-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -858,16 +893,16 @@
 }
 
 @media (max-width: 520px) {
-  .metric-grid {
-    grid-template-columns: 1fr;
+  .metric {
+    padding: 1.15rem 0.85rem;
   }
 
-  .metric:nth-child(even) {
-    border-left: 0;
+  .metric b {
+    font-size: clamp(1.85rem, 1.4rem + 3vw, 2.35rem);
   }
 
-  .metric + .metric {
-    border-top: 1px solid var(--color-rule);
+  .metric p {
+    font-size: 0.82rem;
   }
 
   .film {

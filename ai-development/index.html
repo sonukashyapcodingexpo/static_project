@@ -28,9 +28,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="site-logo">
-        <span class="logo-mark"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#191B1D"/><path d="M10 8V23H22" stroke="#F5F4F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="11" r="3.5" fill="#B85C3B"/></svg></span>
-        <span>Luminate</span>
-        <span class="logo-dot"></span>
+        <img class="logo-img" src="../assets/images/brand/logo-lockup.png" alt="Luminate" width="280" height="64">
       </a>
 
       <nav class="nav-menu" aria-label="Main Navigation">
@@ -126,26 +124,66 @@
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Retrieval-Augmented Generation (RAG)</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Grounding language models on your private enterprise documentation with zero hallucinations.</p>
+            <ul class="deliver-list">
+              <li>The model answers from your documents, not from the open web</li>
+              <li>Each answer can show the page it came from</li>
+              <li>Access follows the same permissions as the source files</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Predictive Machine Learning Models</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Classification, churn prediction, and time-series forecasting models trained on proprietary data.</p>
+            <ul class="deliver-list">
+              <li>A model aimed at one decision, such as churn or demand</li>
+              <li>A plain explanation of what the score means for the team using it</li>
+              <li>A schedule to retrain when the data drifts</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Intelligent Document Processing (IDP)</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Automated extraction and structuring of data from contracts, invoices, and PDF filings.</p>
+            <ul class="deliver-list">
+              <li>Invoices, contracts, and PDFs turned into fields your system can store</li>
+              <li>A check queue when the document is unclear</li>
+              <li>A sample set signed off before the full run</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Enterprise LLM Cost & Latency Optimization</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Model quantization, smart routing, and aggressive semantic caching.</p>
+            <ul class="deliver-list">
+              <li>Routing so simple questions do not use the most expensive model</li>
+              <li>Caching for answers that rarely change</li>
+              <li>A monthly view of cost against the volume of requests</li>
+            </ul>
           </div>
         
+        
+          <div class="card">
+            <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">A human check where the decision matters</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Scores and extracted fields can stop for a person when the confidence is low.</p>
+            <ul class="deliver-list">
+              <li>A threshold you choose, not a hidden default</li>
+              <li>The reviewer sees the source text next to the result</li>
+              <li>Accepted corrections can feed the next training pass</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Evaluation before anyone relies on it</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">The model is tried on your documents and your examples before it is put in front of staff.</p>
+            <ul class="deliver-list">
+              <li>A held-out set of real cases</li>
+              <li>A written note of where it fails</li>
+              <li>A go or no-go before production</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -367,8 +405,7 @@
       <div class="footer-top">
         <div>
           <a href="../index.html" class="site-logo" style="color: #FFFFFF; margin-bottom: var(--space-sm);">
-            <span>Luminate</span>
-            <span class="logo-dot"></span>
+            <img class="logo-img" src="../assets/images/brand/logo-lockup.png" alt="Luminate" width="280" height="64">
           </a>
           <p style="color: var(--color-deep-muted); max-width: 34ch;">
             Custom software, mobile products, and IT support for businesses that want technology they can grow on.
@@ -409,6 +446,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 Luminate. All rights reserved.</div>
         <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap;">
+          <a href="../refund-policy/index.html">Refund Policy</a>
           <a href="../privacy-policy/index.html">Privacy Policy</a>
           <a href="../terms-conditions/index.html">Terms &amp; Conditions</a>
           <a href="../sitemap.html">Sitemap</a>
@@ -418,6 +456,6 @@
     </div>
   </footer>
 
-  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/main.js?v=3"></script>
 </body>
 </html>

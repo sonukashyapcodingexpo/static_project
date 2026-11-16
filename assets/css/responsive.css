@@ -82,6 +82,11 @@ textarea,
     height: 24px;
   }
 
+  .site-logo .logo-img,
+  .site-footer .site-logo .logo-img {
+    height: 36px;
+  }
+
   .menu-toggle {
     display: flex !important;
     align-items: center;
@@ -617,6 +622,11 @@ textarea,
 
   .site-logo {
     font-size: 1rem !important;
+  }
+
+  .site-logo .logo-img,
+  .site-footer .site-logo .logo-img {
+    height: 32px;
   }
 
   .hero-section {

@@ -28,9 +28,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="site-logo">
-        <span class="logo-mark"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#191B1D"/><path d="M10 8V23H22" stroke="#F5F4F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="11" r="3.5" fill="#B85C3B"/></svg></span>
-        <span>Luminate</span>
-        <span class="logo-dot"></span>
+        <img class="logo-img" src="../assets/images/brand/logo-lockup.png" alt="Luminate" width="280" height="64">
       </a>
 
       <nav class="nav-menu" aria-label="Main Navigation">
@@ -121,26 +119,66 @@
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">RESTful & GraphQL Architectures</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Strictly typed, versioned API layers with comprehensive OpenAPI/Swagger documentation.</p>
+            <ul class="deliver-list">
+              <li>Versioned endpoints so a change does not break current apps</li>
+              <li>OpenAPI or schema docs a partner can build against</li>
+              <li>Example requests for the main flows</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Enterprise Gateway Integration</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Connecting legacy ERPs (SAP, Oracle) with cloud SaaS platforms and payment processors.</p>
+            <ul class="deliver-list">
+              <li>A path between the ERP, the store, and the tools around them</li>
+              <li>Errors queued instead of dropped when the other system is down</li>
+              <li>A map of which system owns each record</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Webhook & Event Delivery</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Guaranteed-at-least-once webhook delivery systems with automated retry mechanisms.</p>
+            <ul class="deliver-list">
+              <li>Events retried until the receiver confirms them</li>
+              <li>A log of what was sent and what failed</li>
+              <li>A way to replay one event without resending the whole day</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">API Rate Limiting & Threat Protection</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">DDoS mitigation, token bucket rate limits, and cryptographic payload validation.</p>
+            <ul class="deliver-list">
+              <li>Limits per key so one client cannot crowd out the others</li>
+              <li>Rejected calls return a clear reason</li>
+              <li>Keys can be rotated without a downtime window</li>
+            </ul>
           </div>
         
+        
+          <div class="card">
+            <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">A sandbox partners can use</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">A partner can try the API without touching live orders or live customers.</p>
+            <ul class="deliver-list">
+              <li>Keys that only see test data</li>
+              <li>Example calls for the main resources</li>
+              <li>The same errors they will see in production</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Versioning and a deprecation note</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">A change is announced before an old call is removed.</p>
+            <ul class="deliver-list">
+              <li>A version in the URL or the header</li>
+              <li>A date for the old version</li>
+              <li>A changelog a partner can read</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -362,8 +400,7 @@
       <div class="footer-top">
         <div>
           <a href="../index.html" class="site-logo" style="color: #FFFFFF; margin-bottom: var(--space-sm);">
-            <span>Luminate</span>
-            <span class="logo-dot"></span>
+            <img class="logo-img" src="../assets/images/brand/logo-lockup.png" alt="Luminate" width="280" height="64">
           </a>
           <p style="color: var(--color-deep-muted); max-width: 34ch;">
             Custom software, mobile products, and IT support for businesses that want technology they can grow on.
@@ -404,6 +441,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 Luminate. All rights reserved.</div>
         <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap;">
+          <a href="../refund-policy/index.html">Refund Policy</a>
           <a href="../privacy-policy/index.html">Privacy Policy</a>
           <a href="../terms-conditions/index.html">Terms &amp; Conditions</a>
           <a href="../sitemap.html">Sitemap</a>
@@ -413,6 +451,6 @@
     </div>
   </footer>
 
-  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/main.js?v=3"></script>
 </body>
 </html>

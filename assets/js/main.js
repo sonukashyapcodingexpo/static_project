@@ -178,11 +178,27 @@
       }
     ];
 
-    navMenu.querySelectorAll(':scope > a.nav-link').forEach((link) => {
-      const href = link.getAttribute('href') || '';
-      if (href.includes('portfolio/') || href.includes('case-studies/')) {
-        link.classList.add('nav-link-skip');
+    const contact = [...navMenu.querySelectorAll(':scope > a.nav-link')].find((anchor) =>
+      (anchor.getAttribute('href') || '').includes('contact-us/')
+    );
+    const herePath = location.pathname.replace(/\\/g, '/');
+    [
+      ['portfolio/', 'Portfolio', 'portfolio/index.html'],
+      ['case-studies/', 'Case Studies', 'case-studies/index.html']
+    ].forEach(([key, label, path]) => {
+      let link = [...navMenu.querySelectorAll(':scope > a.nav-link')].find((anchor) =>
+        (anchor.getAttribute('href') || '').includes(key)
+      );
+      if (!link) {
+        link = document.createElement('a');
+        link.className = 'nav-link';
+        link.href = to(path);
+        link.textContent = label;
       }
+      link.classList.remove('nav-link-skip');
+      if (herePath.includes('/' + key)) link.classList.add('active');
+      if (contact) navMenu.insertBefore(link, contact);
+      else navMenu.appendChild(link);
     });
 
     menus.forEach((menu) => {
@@ -251,12 +267,13 @@
     });
 
     const here = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
+    const topLevelDest = (link) => new URL(link.getAttribute('href'), location.href).pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
     navMenu.querySelectorAll('.nav-choice, .nav-panel-all').forEach((anchor) => {
-      const dest = new URL(anchor.getAttribute('href'), location.href).pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
-      if (dest && here.endsWith(dest)) {
-        anchor.classList.add('is-here');
-        anchor.closest('.nav-item')?.classList.add('is-current');
-      }
+      const dest = topLevelDest(anchor);
+      if (!dest || !here.endsWith(dest)) return;
+      anchor.classList.add('is-here');
+      const alreadyInBar = [...navMenu.querySelectorAll(':scope > a.nav-link')].some((link) => topLevelDest(link) === dest);
+      if (!alreadyInBar) anchor.closest('.nav-item')?.classList.add('is-current');
     });
   }
 
@@ -385,6 +402,10 @@
         // Submit action
         const submitBtn = form.querySelector('button[type="submit"]');
         const origText = submitBtn ? submitBtn.innerHTML : '';
+        const processingText = form.dataset.processingText || 'Processing Scope...';
+        const successMessage = form.dataset.successMessage || 'Success! Your request has been logged. An engineering lead from Luminate will review your specification and reach out within 1 business day.';
+        const toastMessage = form.dataset.toastMessage || 'Enquiry received! We will reply within 1 business day.';
+
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.innerHTML = `
@@ -393,7 +414,7 @@
                 <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
                 <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
               </svg>
-              Processing Scope...
+              ${processingText}
             </span>`;
         }
 
@@ -408,6 +429,7 @@
           if (!success) {
             success = document.createElement('div');
             success.className = 'form-success-message';
+            success.setAttribute('role', 'status');
             success.style.cssText = `
               padding: var(--space-md) var(--space-lg);
               background: #EBF7EE;
@@ -429,9 +451,10 @@
             <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
-            Success! Your request has been logged. An engineering lead from Luminate will review your specification and reach out within 1 business day.`;
+            ${successMessage}`;
           form.reset();
-          showToast('Enquiry received! We will reply within 1 business day.');
+          form.dispatchEvent(new CustomEvent('form:success', { bubbles: true }));
+          showToast(toastMessage);
         }, 600);
       });
     });
@@ -611,7 +634,7 @@
 
   // --- 9. Kinetic Numerical Counter Animation ---
   function initCountUpStats() {
-    const stats = document.querySelectorAll('.stat-number');
+    const stats = document.querySelectorAll('.stat-number, .metric b');
     if (!stats.length) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -619,45 +642,57 @@
 
     if (!('IntersectionObserver' in window)) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          observer.unobserve(el);
-
-          const rawText = el.textContent.trim();
-          // Match numbers like 48, 99.98, 10, 82, 3.2
-          const match = rawText.match(/([<>]?\s*)([0-9]+(?:\.[0-9]+)?)(.*)/);
-          if (!match) return;
-
-          const prefix = match[1] || '';
-          const targetNum = parseFloat(match[2]);
-          const suffix = match[3] || '';
-          const isDecimal = match[2].includes('.');
-          const duration = 1200; // ms
-          const startTime = performance.now();
-
-          function step(now) {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            // Ease-out cubic
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
-            const currentNum = targetNum * easeProgress;
-
-            el.textContent = prefix + (isDecimal ? currentNum.toFixed(2) : Math.round(currentNum)) + suffix;
-
-            if (progress < 1) {
-              requestAnimationFrame(step);
-            } else {
-              el.textContent = rawText; // restore exact original
-            }
-          }
-          requestAnimationFrame(step);
+    function readStat(el) {
+      if (el.querySelector('svg, img')) return null;
+      const suffixEl = el.querySelector('span');
+      const source = suffixEl
+        ? [...el.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim())
+        : null;
+      const rawText = (source ? source.textContent : el.textContent).trim();
+      const match = rawText.match(/([<>]?\s*)([0-9]+(?:\.[0-9]+)?)(.*)/);
+      if (!match) return null;
+      return {
+        prefix: match[1] || '',
+        target: parseFloat(match[2]),
+        suffix: match[3] || '',
+        decimal: match[2].includes('.'),
+        write(value) {
+          const shown = this.decimal ? value.toFixed(2) : String(Math.round(value));
+          if (source) source.textContent = this.prefix + shown + this.suffix;
+          else el.textContent = this.prefix + shown + this.suffix;
         }
-      });
-    }, { threshold: 0.3 });
+      };
+    }
 
-    stats.forEach(s => observer.observe(s));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const stat = el._countStat;
+        if (!stat) return;
+        observer.unobserve(el);
+
+        const duration = 1500;
+        const startTime = performance.now();
+
+        function step(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          stat.write(stat.target * eased);
+          if (progress < 1) requestAnimationFrame(step);
+          else stat.write(stat.target);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+
+    stats.forEach((el) => {
+      const stat = readStat(el);
+      if (!stat) return;
+      el._countStat = stat;
+      stat.write(0);
+      observer.observe(el);
+    });
   }
 
   // --- 10. Progressive Kinetic Motion System ---

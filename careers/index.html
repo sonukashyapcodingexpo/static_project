@@ -24,9 +24,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="site-logo">
-        <span class="logo-mark"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#191B1D"/><path d="M10 8V23H22" stroke="#F5F4F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="11" r="3.5" fill="#B85C3B"/></svg></span>
-        <span>Luminate</span>
-        <span class="logo-dot"></span>
+        <img class="logo-img" src="../assets/images/brand/logo-lockup.png" alt="Luminate" width="280" height="64">
       </a>
 
       <nav class="nav-menu" aria-label="Main Navigation">
@@ -100,7 +98,7 @@
               <h3 style="margin: var(--space-2xs) 0;">Senior Distributed Systems Architect</h3>
               <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Lead the design of high-throughput transactional backends and cloud migrations.</p>
             </div>
-            <a href="mailto:careers@luminate.tech?subject=Application: Senior Distributed Systems Architect" class="btn btn-primary">Apply for Position</a>
+            <button type="button" class="btn btn-primary js-open-apply" data-role="Senior Distributed Systems Architect">Apply for Position</button>
           </div>
 
           <!-- Role 2 -->
@@ -110,7 +108,7 @@
               <h3 style="margin: var(--space-2xs) 0;">Senior Frontend Engineer (Vanilla / Modern JS)</h3>
               <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Craft ultra-performant, accessible, and lightweight client interfaces for enterprise products.</p>
             </div>
-            <a href="mailto:careers@luminate.tech?subject=Application: Senior Frontend Engineer" class="btn btn-primary">Apply for Position</a>
+            <button type="button" class="btn btn-primary js-open-apply" data-role="Senior Frontend Engineer (Vanilla / Modern JS)">Apply for Position</button>
           </div>
 
           <!-- Role 3 -->
@@ -120,24 +118,112 @@
               <h3 style="margin: var(--space-2xs) 0;">Machine Learning & AI Integration Engineer</h3>
               <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Implement autonomous LLM pipelines, vector databases, and enterprise voice workflows.</p>
             </div>
-            <a href="mailto:careers@luminate.tech?subject=Application: ML & AI Engineer" class="btn btn-primary">Apply for Position</a>
+            <button type="button" class="btn btn-primary js-open-apply" data-role="Machine Learning & AI Integration Engineer">Apply for Position</button>
           </div>
         </div>
 
         <div style="margin-top: var(--space-2xl); text-align: center;">
-          <p style="color: var(--color-ink-muted); font-size: var(--text-body-sm);">Don’t see a specific opening that fits? Send your CV and code repositories directly to <a href="mailto:careers@luminate.tech" style="color: var(--color-accent); font-weight: var(--fw-semibold);">careers@luminate.tech</a>.</p>
+          <p style="color: var(--color-ink-muted); font-size: var(--text-body-sm);">Don’t see a specific opening that fits? <button type="button" class="js-open-apply" data-role="General Application" style="background: none; border: none; padding: 0; color: var(--color-accent); font-weight: var(--fw-semibold); font: inherit; cursor: pointer; text-decoration: underline;">Submit a general application</button> or email <a href="mailto:careers@luminate.tech" style="color: var(--color-accent); font-weight: var(--fw-semibold);">careers@luminate.tech</a>.</p>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Application Modal -->
+  <div class="apply-modal" id="apply-modal" hidden>
+    <div class="apply-modal__backdrop" data-close-apply tabindex="-1"></div>
+    <div class="apply-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="apply-modal-title">
+      <button type="button" class="apply-modal__close" data-close-apply aria-label="Close application form">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="apply-modal__form-view" id="apply-form-view">
+        <header class="apply-modal__header">
+          <p class="apply-modal__brand">Luminate Careers</p>
+          <h2 id="apply-modal-title">Apply for this role</h2>
+          <span class="apply-modal__role-chip" id="apply-role-label"></span>
+        </header>
+
+        <form id="careers-apply-form" class="apply-modal__form" data-validate="true"
+          data-processing-text="Submitting..."
+          data-success-message="Thank you! Your application has been received."
+          data-toast-message="Thank you! Application submitted successfully.">
+          <input type="hidden" id="apply-role" name="role" value="">
+
+          <div class="apply-modal__body">
+            <div class="apply-modal__section">
+              <p class="apply-modal__section-label">About you</p>
+              <div class="apply-modal__fields">
+                <div class="form-group">
+                  <label for="apply-name" class="form-label">Full name <span class="required">*</span></label>
+                  <input type="text" id="apply-name" name="name" class="form-input" placeholder="Alex Morgan" autocomplete="name" required>
+                  <span class="form-error">Please enter your full name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="apply-email" class="form-label">Email <span class="required">*</span></label>
+                  <input type="email" id="apply-email" name="email" class="form-input" placeholder="alex@email.com" autocomplete="email" required>
+                  <span class="form-error">Please enter a valid email address.</span>
+                </div>
+                <div class="form-group">
+                  <label for="apply-phone" class="form-label">Phone</label>
+                  <input type="tel" id="apply-phone" name="phone" class="form-input" placeholder="+1 555 000 0000" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                  <label for="apply-linkedin" class="form-label">LinkedIn or portfolio</label>
+                  <input type="url" id="apply-linkedin" name="linkedin" class="form-input" placeholder="https://…">
+                </div>
+              </div>
+            </div>
+
+            <div class="apply-modal__section">
+              <p class="apply-modal__section-label">Your application</p>
+              <div class="form-group">
+                <label for="apply-resume" class="form-label">Resume / CV link <span class="required">*</span></label>
+                <input type="url" id="apply-resume" name="resume" class="form-input" placeholder="https://drive.google.com/…" required>
+                <span class="form-helper">Share a public Drive, Dropbox, or personal site link.</span>
+                <span class="form-error">Please share a link to your resume or CV.</span>
+              </div>
+              <div class="form-group apply-modal__message-group">
+                <label for="apply-message" class="form-label">Why Luminate? <span class="required">*</span></label>
+                <textarea id="apply-message" name="message" rows="3" class="form-textarea" placeholder="A few lines on your experience and what you’d bring to this role…" required></textarea>
+                <span class="form-error">Please share a short note about your interest.</span>
+              </div>
+            </div>
+          </div>
+
+          <footer class="apply-modal__footer">
+            <p class="apply-modal__footnote">We’ll reply within a few business days.</p>
+            <button type="submit" class="btn btn-primary btn-lg apply-modal__submit">Submit application</button>
+          </footer>
+        </form>
+      </div>
+
+      <div class="apply-modal__thanks" id="apply-thanks-view" hidden>
+        <div class="apply-modal__thanks-mark" aria-hidden="true">
+          <svg viewBox="0 0 52 52" fill="none">
+            <circle class="apply-modal__thanks-ring" cx="26" cy="26" r="24" stroke="currentColor" stroke-width="2"/>
+            <path class="apply-modal__thanks-check" d="M15 27.5l7 7 15-16" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="apply-modal__thanks-eyebrow">Application received</p>
+        <h2>Thank you</h2>
+        <p class="apply-modal__thanks-copy">
+          We’ve logged your application. Our hiring team will review it and reach out if there’s a strong fit.
+        </p>
+        <button type="button" class="btn btn-primary" data-close-apply>Back to careers</button>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
         <div>
           <a href="../index.html" class="site-logo" style="color: #FFFFFF; margin-bottom: var(--space-sm);">
-            <span>Luminate</span>
-            <span class="logo-dot"></span>
+            <img class="logo-img" src="../assets/images/brand/logo-lockup.png" alt="Luminate" width="280" height="64">
           </a>
           <p style="color: var(--color-deep-muted); max-width: 34ch;">
             Custom software, mobile products, and IT support for businesses that want technology they can grow on.
@@ -178,6 +264,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 Luminate. All rights reserved.</div>
         <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap;">
+          <a href="../refund-policy/index.html">Refund Policy</a>
           <a href="../privacy-policy/index.html">Privacy Policy</a>
           <a href="../terms-conditions/index.html">Terms &amp; Conditions</a>
           <a href="../sitemap.html">Sitemap</a>
@@ -187,6 +274,68 @@
     </div>
   </footer>
 
-  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/main.js?v=3"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('apply-modal');
+      var formView = document.getElementById('apply-form-view');
+      var thanksView = document.getElementById('apply-thanks-view');
+      var roleInput = document.getElementById('apply-role');
+      var roleLabel = document.getElementById('apply-role-label');
+      var form = document.getElementById('careers-apply-form');
+      if (!modal || !form) return;
+
+      function openApply(role) {
+        role = role || 'General Application';
+        roleInput.value = role;
+        roleLabel.textContent = role === 'General Application'
+          ? 'General application'
+          : role;
+        formView.hidden = false;
+        thanksView.hidden = true;
+        var existing = form.querySelector('.form-success-message');
+        if (existing) existing.remove();
+        form.reset();
+        roleInput.value = role;
+        modal.hidden = false;
+        document.body.classList.add('apply-modal-open');
+        requestAnimationFrame(function () {
+          var first = form.querySelector('input:not([type="hidden"])');
+          if (first) first.focus();
+        });
+      }
+
+      function closeApply() {
+        modal.hidden = true;
+        document.body.classList.remove('apply-modal-open');
+      }
+
+      document.querySelectorAll('.js-open-apply').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openApply(btn.getAttribute('data-role'));
+        });
+      });
+
+      modal.querySelectorAll('[data-close-apply]').forEach(function (el) {
+        el.addEventListener('click', closeApply);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !modal.hidden) closeApply();
+      });
+
+      form.addEventListener('form:success', function () {
+        formView.hidden = true;
+        thanksView.hidden = false;
+        var mark = thanksView.querySelector('.apply-modal__thanks-mark');
+        if (mark) {
+          var clone = mark.cloneNode(true);
+          mark.parentNode.replaceChild(clone, mark);
+        }
+        var closeBtn = thanksView.querySelector('button');
+        if (closeBtn) closeBtn.focus();
+      });
+    });
+  </script>
 </body>
 </html>

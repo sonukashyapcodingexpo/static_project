@@ -20,6 +20,7 @@
   <url><loc>https://www.luminate.tech/life-at-company/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://www.luminate.tech/blog/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://www.luminate.tech/blog/articles/example-article/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.luminate.tech/refund-policy/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://www.luminate.tech/privacy-policy/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://www.luminate.tech/terms-conditions/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 

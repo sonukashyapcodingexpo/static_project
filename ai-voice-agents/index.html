@@ -28,9 +28,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="../index.html" class="site-logo">
-        <span class="logo-mark"><svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#191B1D"/><path d="M10 8V23H22" stroke="#F5F4F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="11" r="3.5" fill="#B85C3B"/></svg></span>
-        <span>Luminate</span>
-        <span class="logo-dot"></span>
+        <img class="logo-img" src="../assets/images/brand/logo-lockup.png" alt="Luminate" width="280" height="64">
       </a>
 
       <nav class="nav-menu" aria-label="Main Navigation">
@@ -121,26 +119,66 @@
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Ultra-Low-Latency Audio Pipelines</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Sub-500ms voice-to-voice response times using optimized streaming STT and TTS.</p>
+            <ul class="deliver-list">
+              <li>A voice reply that starts before the caller finishes waiting</li>
+              <li>Streaming speech so the line does not go quiet</li>
+              <li>A test call recorded against your real script</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Telephony & PBX Integration</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Direct SIP trunking and WebRTC connections to Twilio, Asterisk, and enterprise call centers.</p>
+            <ul class="deliver-list">
+              <li>The agent sits on the numbers you already publish</li>
+              <li>Call routing into Twilio, Asterisk, or the current call center</li>
+              <li>A fallback number if the agent cannot take the call</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Dynamic API Action Calling</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Voice agents query internal databases live to confirm bookings, check status, or verify identity.</p>
+            <ul class="deliver-list">
+              <li>The agent can check a booking, a balance, or an order while on the line</li>
+              <li>Only the actions you approve are available to the voice agent</li>
+              <li>A failed lookup is said plainly instead of invented</li>
+            </ul>
           </div>
         
 
           <div class="card">
             <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Seamless Human Handoff</h3>
             <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">Intelligent escalation with full call summaries routed directly to human specialists.</p>
+            <ul class="deliver-list">
+              <li>The caller moves to a person without repeating the story</li>
+              <li>The specialist sees a short summary and the last answers</li>
+              <li>After-hours calls can take a message or book a return call</li>
+            </ul>
           </div>
         
+        
+          <div class="card">
+            <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Scripts and the lines it must not cross</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">The agent follows the wording you approve, including what it should refuse.</p>
+            <ul class="deliver-list">
+              <li>A script for the main call types</li>
+              <li>Phrases that must transfer to a person</li>
+              <li>A recording of a test call against that script</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: var(--text-h4); margin-bottom: var(--space-xs);">Hours, overflow, and after the call</h3>
+            <p style="font-size: var(--text-body-sm); color: var(--color-ink-muted);">The line still behaves when the office is closed or the queue is full.</p>
+            <ul class="deliver-list">
+              <li>Opening hours and a closed message</li>
+              <li>Overflow to a person or a voicemail</li>
+              <li>A summary stored against the caller</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -362,8 +400,7 @@
       <div class="footer-top">
         <div>
           <a href="../index.html" class="site-logo" style="color: #FFFFFF; margin-bottom: var(--space-sm);">
-            <span>Luminate</span>
-            <span class="logo-dot"></span>
+            <img class="logo-img" src="../assets/images/brand/logo-lockup.png" alt="Luminate" width="280" height="64">
           </a>
           <p style="color: var(--color-deep-muted); max-width: 34ch;">
             Custom software, mobile products, and IT support for businesses that want technology they can grow on.
@@ -404,6 +441,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 Luminate. All rights reserved.</div>
         <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap;">
+          <a href="../refund-policy/index.html">Refund Policy</a>
           <a href="../privacy-policy/index.html">Privacy Policy</a>
           <a href="../terms-conditions/index.html">Terms &amp; Conditions</a>
           <a href="../sitemap.html">Sitemap</a>
@@ -413,6 +451,6 @@
     </div>
   </footer>
 
-  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/main.js?v=3"></script>
 </body>
 </html>
