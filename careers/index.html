@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../assets/css/variables.css">
   <link rel="stylesheet" href="../assets/css/global.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/components.css?v=6">
   <link rel="stylesheet" href="../assets/css/animations.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
   <link rel="stylesheet" href="../assets/css/pages/studio.css?v=4">
@@ -181,10 +181,18 @@
             <div class="apply-modal__section">
               <p class="apply-modal__section-label">Your application</p>
               <div class="form-group">
-                <label for="apply-resume" class="form-label">Resume / CV link <span class="required">*</span></label>
-                <input type="url" id="apply-resume" name="resume" class="form-input" placeholder="https://drive.google.com/…" required>
-                <span class="form-helper">Share a public Drive, Dropbox, or personal site link.</span>
-                <span class="form-error">Please share a link to your resume or CV.</span>
+                <label for="apply-cv" class="form-label">Upload CV <span class="required">*</span></label>
+                <div class="file-field">
+                  <input type="file" id="apply-cv" name="cv" class="file-field__input" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+                  <span class="file-field__btn">Choose file</span>
+                  <span class="file-field__name" id="apply-cv-name">PDF, DOC, or DOCX · 5 MB max</span>
+                </div>
+                <span class="form-error">Upload a PDF, DOC, or DOCX under 5 MB.</span>
+              </div>
+              <div class="form-group">
+                <label for="apply-resume" class="form-label">CV link</label>
+                <input type="url" id="apply-resume" name="resume" class="form-input" placeholder="https://drive.google.com/…">
+                <span class="form-helper">Optional. A public Drive, Dropbox, or site link.</span>
               </div>
               <div class="form-group apply-modal__message-group">
                 <label for="apply-message" class="form-label">Why Luminate? <span class="required">*</span></label>
@@ -289,7 +297,41 @@
       var roleInput = document.getElementById('apply-role');
       var roleLabel = document.getElementById('apply-role-label');
       var form = document.getElementById('careers-apply-form');
-      if (!modal || !form) return;
+      var cv = document.getElementById('apply-cv');
+      var cvName = document.getElementById('apply-cv-name');
+      var cvEmpty = 'PDF, DOC, or DOCX · 5 MB max';
+      if (!modal || !form || !cv) return;
+
+      function paintCv() {
+        var file = cv.files && cv.files[0];
+        cvName.textContent = file ? file.name : cvEmpty;
+      }
+
+      function cvOk() {
+        var file = cv.files && cv.files[0];
+        if (!file) return false;
+        if (!/\.(pdf|doc|docx)$/i.test(file.name)) return false;
+        return file.size <= 5 * 1024 * 1024;
+      }
+
+      cv.addEventListener('change', function () {
+        paintCv();
+        cv.closest('.form-group').classList.remove('has-error');
+        cv.removeAttribute('aria-invalid');
+      });
+      form.addEventListener('reset', paintCv);
+      form.addEventListener('submit', function (event) {
+        var group = cv.closest('.form-group');
+        if (cvOk()) {
+          group.classList.remove('has-error');
+          cv.removeAttribute('aria-invalid');
+          return;
+        }
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        group.classList.add('has-error');
+        cv.setAttribute('aria-invalid', 'true');
+      }, true);
 
       function openApply(role) {
         role = role || 'General Application';
